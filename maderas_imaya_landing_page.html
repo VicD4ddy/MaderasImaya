@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maderas IMAYA — Calidad y Firmeza en Madera Contrachapada de Pino Caribe</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono for technical bracket tags -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        lime: {
+                            pale: '#E4F8B2',
+                            hover: '#d5f092',
+                            soft: '#F1FBD6',
+                        },
+                        imaya: {
+                            green: '#138844',
+                            bright: '#22C55E',
+                        },
+                        forest: {
+                            dark: '#142019',
+                            frame: '#5B6756',
+                            card: '#F2F5F6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom styles for smooth animations and scrollbars */
+        body {
+            background-color: #5B6756;
+            color: #142019;
+            overflow-x: hidden;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Staggered Hero Word Animation */
+        .hero-word {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(32px) rotate(1.5deg);
+            animation: wordReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes wordReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        /* Infinite Marquee Animation for Partner Sectors */
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marqueeScroll 28s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Reveal on scroll animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Image Clip-Path & Scale Reveal */
+        .img-reveal {
+            clip-path: inset(8% 4% 8% 4% round 12px);
+            transform: scale(1.06);
+            transition: clip-path 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active .img-reveal {
+            clip-path: inset(0% 0% 0% 0% round 12px);
+            transform: scale(1);
+        }
+
+        /* 3D Isometric Plywood Layer Transitions */
+        .ply-layer {
+            transition: transform 0.75s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.5s ease;
+        }
+        .ply-callout {
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .exploded .ply-callout {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Exploded 3D Layer Offsets when active */
+        .exploded .ply-layer-1 { transform: translate(0px, -58px) !important; }
+        .exploded .ply-layer-2 { transform: translate(0px, -28px) !important; }
+        .exploded .ply-layer-3 { transform: translate(0px, 2px) !important; }
+        .exploded .ply-layer-4 { transform: translate(0px, 32px) !important; }
+        .exploded .ply-layer-5 { transform: translate(0px, 62px) !important; }
+
+        /* Card flip / reveal transition */
+        .story-overlay {
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        /* Floating pulse ring */
+        @keyframes pulseRing {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            70% { transform: scale(1.6); opacity: 0; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+        .pulse-ring::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            background-color: #E4F8B2;
+            animation: pulseRing 2s infinite;
+        }
+    </style>
+</head>
+<body class="p-2 sm:p-4 md:p-6 lg:p-8 min-h-screen antialiased selection:bg-lime-pale selection:text-forest-dark">
+
+    <!-- Main Outer Rounded Frame (mimicking the video's clean viewport container) -->
+    <div class="max-w-[1360px] mx-auto bg-white rounded-[24px] sm:rounded-[32px] shadow-2xl overflow-hidden relative">
+
+        <!-- ==========================================
+             1. HERO SECTION WITH FULL-BLEED VIDEO & PARTICLES
+             ========================================== -->
+        <header id="inicio" class="relative w-full min-h-[860px] lg:min-h-[960px] flex flex-col justify-between text-white overflow-hidden bg-forest-dark">
+            
+            <!-- Background Video (Aerial Pine Forest / Highway through Timberland) + High-Res Fallback Image -->
+            <div class="absolute inset-0 w-full h-full overflow-hidden">
+                <video 
+                    id="hero-video"
+                    autoplay 
+                    loop 
+                    muted 
+                    playsinline 
+                    poster="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=85"
+                    class="w-full h-full object-cover object-center scale-105 transition-transform duration-700 ease-out"
+                >
+                    <!-- Reliable CDN MP4 Sources of Aerial Pine Forests -->
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-road-in-the-middle-of-a-forest-41539-large.mp4" type="video/mp4">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-flying-over-a-green-forest-on-a-sunny-day-42862-large.mp4" type="video/mp4">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+                </video>
+                <!-- Subtle Animated Forest Light & Mist Canvas -->
+                <canvas id="forest-particles" class="absolute inset-0 w-full h-full pointer-events-none opacity-60"></canvas>
+            </div>
+
+            <!-- Rich Emerald & Dark Gradient Overlays for Optimal Contrast -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-[#142019]/45 to-[#0d1611]/90 pointer-events-none"></div>
+
+            <!-- Top Navigation Bar -->
+            <nav class="relative z-20 flex items-center justify-between px-6 sm:px-10 lg:px-14 py-5 border-b border-white/15 backdrop-blur-[2px]">
+                <!-- Custom SVG Recreation of Maderas IMAYA Logo (Light Version for Dark Hero) -->
+                <a href="#inicio" class="flex items-center gap-3 group" aria-label="IMAYA Industria Maderera Yaracuy C.A.">
+                    <svg viewBox="0 0 280 95" class="h-11 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-[1.03]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stylized Green Pine Tree Icon (Matching IMAYA Brand Identity) -->
+                        <g fill="#25B862">
+                            <path d="M46 10C38 10 32 13 32 16.5C32 19 36 20.5 29 21.5C21 22.5 17 25 18 28.5C19 31.5 28 32 23 33.5C15 35.5 13 38.5 15 41.5C17 44 26 44.5 21 46C12 48 10 51 13 54.5C16 57.5 26 57.5 20 59.5C11 61.5 9 64.5 13 67.5C17 70 28 70 35 70V82H42V70H45V82H52V70C61 70 72 68.5 74 64.5C76 60.5 66 59 58 58.5C67 57.5 74 55 73 51.5C72 48 62 47 55 46.5C65 45.5 72 43 71 39C70 35.5 60 34.5 53 34C62 33 69 30.5 68 26.5C67 23 58 22 52 21.5C58 20 63 17.5 61 14C59 11 52 10 46 10Z" />
+                        </g>
+                        <!-- IMAYA Bold Geometric Wordmark -->
+                        <g fill="#FFFFFF">
+                            <rect x="88" y="34" width="8" height="38" />
+                            <path d="M103 72V34H111L122 50L133 34H141V72H133V47L122 62L111 47V72H103Z" />
+                            <path d="M147 72L161 34H170L184 72H175L172 63H159L156 72H147ZM161.5 56H169.5L165.5 44L161.5 56Z" />
+                            <path d="M196 55L182 34H191L200 48L209 34H218L204 55V72H196V55Z" />
+                            <path d="M216 72L230 34H239L253 72H244L241 63H228L225 72H216ZM230.5 56H238.5L234.5 44L230.5 56Z" />
+                        </g>
+                        <!-- Green Horizontal Rule -->
+                        <rect x="12" y="76" width="242" height="3" fill="#25B862" />
+                        <!-- Subtitle: INDUSTRIA MADERERA YARACUY C.A. -->
+                        <text x="13" y="91" fill="#E4F8B2" font-family="Inter, sans-serif" font-size="10.3" font-weight="700" letter-spacing="1.15">INDUSTRIA MADERERA YARACUY C.A.</text>
+                    </svg>
+                </a>
+
+                <!-- Desktop Menu Links -->
+                <div class="hidden lg:flex items-center gap-7 text-sm font-normal text-white/85">
+                    <a href="#inicio" class="text-white font-medium hover:text-lime-pale transition">Inicio</a>
+                    <a href="#soluciones" class="hover:text-lime-pale transition flex items-center gap-1">
+                        Productos <i class="ph ph-caret-down text-xs"></i>
+                    </a>
+                    <a href="#proceso" class="hover:text-lime-pale transition">Ingeniería 3D</a>
+                    <a href="#historias" class="hover:text-lime-pale transition">Casos de Éxito</a>
+                    <a href="#nosotros" class="hover:text-lime-pale transition">Planta Yaracuy</a>
+                    <a href="#aplicaciones" class="hover:text-lime-pale transition flex items-center gap-1">
+                        Guía Técnica <i class="ph ph-caret-down text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Right Actions: Instagram & CTA Button -->
+                <div class="flex items-center gap-3">
+                    <a href="https://www.instagram.com/maderas.imaya/" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-1.5 text-xs text-white/90 hover:text-lime-pale bg-white/10 hover:bg-white/20 px-3 py-2.5 rounded-md transition backdrop-blur-sm border border-white/10" title="Síguenos en Instagram @maderas.imaya">
+                        <i class="ph ph-instagram-logo text-base text-lime-pale"></i>
+                        <span class="font-mono">@maderas.imaya</span>
+                    </a>
+                    <button onclick="openModal('Solicitar Cotización')" class="bg-lime-pale hover:bg-lime-hover text-forest-dark text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-md transition shadow-sm hover:shadow-lime-pale/20 hover:shadow-lg active:scale-95">
+                        Solicitar Cotización
+                    </button>
+                    <!-- Mobile Menu Trigger -->
+                    <button id="mobile-menu-btn" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10" aria-label="Abrir menú">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu" class="hidden relative z-20 bg-forest-dark/95 backdrop-blur-md px-6 py-5 border-b border-white/10 lg:hidden">
+                <div class="flex flex-col gap-4 text-sm text-white/90">
+                    <a href="#inicio" class="hover:text-lime-pale">Inicio</a>
+                    <a href="#calidad" class="hover:text-lime-pale">Ventajas del Pino Caribe</a>
+                    <a href="#proceso" class="hover:text-lime-pale">Ingeniería Multicapa 3D</a>
+                    <a href="#soluciones" class="hover:text-lime-pale">Líneas de Producto</a>
+                    <a href="#historias" class="hover:text-lime-pale">Clientes y Obras</a>
+                    <a href="#aplicaciones" class="hover:text-lime-pale">Guía de Aplicaciones</a>
+                    <a href="https://www.instagram.com/maderas.imaya/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-lime-pale font-mono pt-2 border-t border-white/10">
+                        <i class="ph ph-instagram-logo text-lg"></i> @maderas.imaya
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Hero Content (Top/Middle) with Word-by-Word Reveal -->
+            <div class="relative z-10 px-6 sm:px-10 lg:px-14 pt-10 sm:pt-14 pb-10 max-w-5xl">
+                <div class="flex flex-wrap items-center gap-3 mb-6">
+                    <div class="inline-flex items-center gap-2.5 bg-black/45 backdrop-blur-md border border-white/15 rounded-full px-4 py-1.5">
+                        <span class="relative w-2 h-2 rounded-full bg-lime-pale pulse-ring"></span>
+                        <span class="font-mono text-[11px] uppercase tracking-wider text-lime-pale">Carretera Panamericana • San Felipe, Yaracuy</span>
+                    </div>
+                    <!-- Video Play/Pause Interactive Pill -->
+                    <button id="video-toggle-btn" onclick="toggleHeroVideo()" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/15 rounded-full px-3.5 py-1.5 text-[11px] font-mono text-white/90 transition">
+                        <i id="video-toggle-icon" class="ph-fill ph-pause text-lime-pale"></i>
+                        <span id="video-toggle-text">Video Aéreo Activo</span>
+                    </button>
+                </div>
+
+                <!-- Animated Staggered Headline -->
+                <h1 class="text-4xl sm:text-6xl lg:text-[66px] font-normal tracking-tight leading-[1.06] mb-6">
+                    <span class="hero-word" style="animation-delay: 0.05s">Del</span>
+                    <span class="hero-word" style="animation-delay: 0.12s">Bosque</span>
+                    <span class="hero-word" style="animation-delay: 0.19s">a</span>
+                    <span class="hero-word" style="animation-delay: 0.26s">tu</span>
+                    <span class="hero-word" style="animation-delay: 0.33s">Obra</span>
+                    <span class="hero-word" style="animation-delay: 0.40s">—</span><br class="hidden sm:block">
+                    <span class="hero-word" style="animation-delay: 0.47s">Firmeza,</span>
+                    <span class="hero-word text-lime-pale" style="animation-delay: 0.56s">Calidad,</span>
+                    <span class="hero-word text-lime-pale" style="animation-delay: 0.65s">Respaldo</span>
+                </h1>
+
+                <p class="text-base sm:text-lg text-white/90 max-w-xl font-light leading-relaxed mb-8 opacity-0 animate-[wordReveal_0.9s_0.75s_forwards]">
+                    Una buena elección lo cambia todo. Especialistas en <strong>madera contrachapada de Pino Caribe</strong>, importación y distribución nacional — tu aliado estratégico en construcción y carpintería.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4 opacity-0 animate-[wordReveal_0.9s_0.9s_forwards]">
+                    <a href="#soluciones" class="inline-flex items-center gap-2 bg-lime-pale hover:bg-lime-hover text-forest-dark text-xs sm:text-sm font-semibold px-5 py-3.5 rounded-md transition shadow-lg hover:-translate-y-0.5">
+                        Explorar Catálogo de Pino Caribe <i class="ph-bold ph-arrow-down-right"></i>
+                    </a>
+                    <a href="#proceso" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25 backdrop-blur-sm text-xs sm:text-sm font-medium px-5 py-3.5 rounded-md transition">
+                        <i class="ph-bold ph-cube text-lime-pale"></i> Ver Capas en 3D
+                    </a>
+                </div>
+            </div>
+
+            <!-- Secondary Hero Content (Bottom Overlay inside Forest Video) -->
+            <div class="relative z-10 px-6 sm:px-10 lg:px-14 pb-10 pt-8 text-center max-w-5xl mx-auto w-full">
+                <p class="font-mono text-xs uppercase tracking-widest text-lime-pale mb-3">[ IMAYACA • PINO CARIBE ]</p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal leading-snug tracking-tight mb-10 text-white max-w-3xl mx-auto">
+                    Impulsamos la construcción y la carpintería con tableros contrachapados de máxima resistencia — prensados en caliente, estables y listos para grandes exigencias
+                </h2>
+
+                <p class="font-mono text-[11px] sm:text-xs text-white/75 tracking-wider mb-5">
+                    [ aliado estratégico de +100 constructoras, ferreterías, madereras y carpinterías en Venezuela ]
+                </p>
+
+                <!-- Infinite Smooth Marquee Ticker for Partner Sectors -->
+                <div class="overflow-hidden border-t border-white/15 pt-5 relative">
+                    <div class="animate-marquee gap-12 items-center">
+                        <!-- First Set -->
+                        <div class="flex items-center gap-12 shrink-0 pr-12">
+                            <span class="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-white/90">
+                                <i class="ph-bold ph-buildings text-lg text-lime-pale"></i> ENCOFRADOS DE OBRA CIVIL
+                            </span>
+                            <span class="flex items-center gap-2 text-xs sm:text-sm font-bold tracking-tight uppercase text-white/90">
+                                <i class="ph-fill ph-hammer text-lg text-lime-pale"></i> CARPINTERÍA ARQUITECTÓNICA
+                            </span>
+                            <span class="flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.12em] uppercase text-white/90">
+                                <i class="ph-bold ph-stack text-lg text-lime-pale"></i> CONTRAENCHAPADO PINO CARIBE
+                            </span>
+                            <span class="flex items-center gap-2 text-xs sm:text-sm font-medium uppercase text-white/90">
+                                <i class="ph-bold ph-truck text-lg text-lime-pale"></i> IMPORTACIÓN Y DISTRIBUCIÓN MAYORISTA
+                            </span>
+                            <span class="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-white/90">
+                                <i class="ph-bold ph-tree-evergreen text-lg text-lime-pale"></i> MADERA SOSTENIBLE YARACUY
+                            </span>
+                        </div>
+                        <!-- Duplicate Set for Seamless Loop -->
+                        <div class="flex items-center gap-12 shrink-0 pr-12" aria-hidden="true">
+                            <span class="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-white/90">
+                                <i class="ph-bold ph-buildings text-lg text-lime-pale"></i> ENCOFRADOS DE OBRA CIVIL
+                            </span>
+                            <span class="flex items-center gap-2 text-xs sm:text-sm font-bold tracking-tight uppercase text-white/90">
+                                <i class="ph-fill ph-hammer text-lg text-lime-pale"></i> CARPINTERÍA ARQUITECTÓNICA
+                            </span>
+                            <span class="flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.12em] uppercase text-white/90">
+                                <i class="ph-bold ph-stack text-lg text-lime-pale"></i> CONTRAENCHAPADO PINO CARIBE
+                            </span>
+                            <span class="flex items-center gap-2 text-xs sm:text-sm font-medium uppercase text-white/90">
+                                <i class="ph-bold ph-truck text-lg text-lime-pale"></i> IMPORTACIÓN Y DISTRIBUCIÓN MAYORISTA
+                            </span>
+                            <span class="flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-white/90">
+                                <i class="ph-bold ph-tree-evergreen text-lg text-lime-pale"></i> MADERA SOSTENIBLE YARACUY
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ==========================================
+             2. APPLIED EFFICIENCY (BENTO GRID WITH COHERENT TIMBER & PLYWOOD PHOTOS)
+             ========================================== -->
+        <section id="calidad" class="px-6 sm:px-10 lg:px-14 py-20 lg:py-28 bg-white reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-stretch">
+                
+                <!-- Left Column: Heading + Testimonial -->
+                <div class="lg:col-span-5 flex flex-col justify-between">
+                    <div>
+                        <span class="font-mono text-xs text-imaya-green font-medium tracking-wider block mb-3">[ Calidad y Firmeza ]</span>
+                        <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-normal tracking-tight leading-[1.15] text-forest-dark mb-6">
+                            Una Buena Elección<br>
+                            Lo Cambia Todo
+                        </h2>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-6">
+                            Desde nuestra planta en la Carretera Panamericana, San Felipe, Yaracuy, seleccionamos rolas de Pino Caribe de primera y procesamos láminas contrachapadas diseñadas para resistir el trabajo pesado en obra y lucir impecables en carpintería.
+                        </p>
+                        <a href="#proceso" class="inline-flex items-center gap-2 bg-lime-pale hover:bg-lime-hover text-forest-dark text-xs font-semibold px-4 py-2.5 rounded transition shadow-sm">
+                            Explorar Ingeniería del Tablero <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Bottom Left Testimonial Block -->
+                    <div class="mt-12 lg:mt-0 pt-8 border-t border-gray-100">
+                        <div class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-gray-800 mb-4">
+                            <i class="ph-bold ph-stack text-base text-imaya-green"></i> CONSTRUCTORA & ENCOFRADOS DEL CENTRO
+                        </div>
+                        <blockquote class="text-sm sm:text-base text-gray-600 leading-relaxed mb-5">
+                            "IMAYA entendió nuestros tiempos de obra desde el primer día. Su madera contrachapada de Pino Caribe nos dio la firmeza estructural, el escuadrado exacto y la reutilización en encofrado que ningún otro proveedor logró igualar."
+                        </blockquote>
+                        <div class="flex items-center gap-3">
+                            <img 
+                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" 
+                                alt="Ing. Carlos Méndez" 
+                                onerror="this.src='https://placehold.co/100x100/e4f8b2/16211c?text=CM'"
+                                class="w-10 h-10 rounded-full object-cover ring-2 ring-lime-pale"
+                            >
+                            <div>
+                                <div class="text-xs font-semibold text-gray-900">Ing. Carlos Méndez</div>
+                                <div class="text-[11px] text-gray-500">Director de Operaciones, Obras Civiles</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Bento Grid with Coherent Timber & Plywood Photography -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Top Full-Span Image: Stacked Plywood Boards & Wood Planks -->
+                    <div class="sm:col-span-2 h-52 sm:h-60 rounded-xl overflow-hidden relative group img-reveal">
+                        <img 
+                            src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=85" 
+                            alt="Láminas de madera contrachapada de Pino Caribe apiladas en planta IMAYA" 
+                            onerror="this.src='https://placehold.co/800x400/e4f8b2/16211c?text=Contrachapado+Pino+Caribe'"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-between p-5">
+                            <span class="text-white text-xs font-mono uppercase tracking-wider bg-black/50 backdrop-blur-sm px-3 py-1.5 rounded border border-white/15">
+                                <i class="ph-fill ph-check-circle text-lime-pale mr-1"></i> Lotes Calibrados • San Felipe, Yaracuy
+                            </span>
+                            <span class="hidden sm:inline-block text-[11px] font-mono text-lime-pale bg-forest-dark/80 px-2.5 py-1 rounded">
+                                1.22m × 2.44m
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Card 1: Contrachapado de Pino Caribe -->
+                    <div class="bg-lime-pale rounded-xl p-6 flex flex-col justify-between min-h-[170px] hover:bg-lime-hover hover:-translate-y-1 transition duration-300 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-forest-dark/70 font-mono">Especialidad</span>
+                            <i class="ph-duotone ph-layers text-xl text-forest-dark"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold uppercase tracking-wide text-forest-dark">CONTRACHAPADO DE PINO CARIBE</h3>
+                            <p class="text-xs text-forest-dark/80 mt-1">Chapas cruzadas a 90° prensadas a alta temperatura</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Importación y Distribución -->
+                    <div class="bg-lime-soft rounded-xl p-6 flex flex-col justify-between min-h-[170px] hover:bg-lime-pale hover:-translate-y-1 transition duration-300 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-forest-dark/70 font-mono">Logística</span>
+                            <i class="ph-duotone ph-truck text-xl text-forest-dark"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold uppercase tracking-wide text-forest-dark">IMPORTACIÓN Y<br>DISTRIBUCIÓN</h3>
+                            <p class="text-xs text-forest-dark/80 mt-1">Despacho seguro en paletas flejadas y gandolas</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Construcción y Carpintería -->
+                    <div class="bg-lime-soft rounded-xl p-6 flex flex-col justify-between min-h-[170px] hover:bg-lime-pale hover:-translate-y-1 transition duration-300 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-forest-dark/70 font-mono">Versatilidad</span>
+                            <i class="ph-duotone ph-ruler text-xl text-forest-dark"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold uppercase tracking-wide text-forest-dark">CALIBRACIÓN Y<br>CORTE PRECISO</h3>
+                            <p class="text-xs text-forest-dark/80 mt-1">Espesores desde 6 mm hasta 18 mm sin alabeo</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Stacked Pine Timber Logs Image Card -->
+                    <div class="rounded-xl overflow-hidden h-[170px] relative group img-reveal">
+                        <img 
+                            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=85" 
+                            alt="Rolas de Pino Caribe cosechadas y apiladas para procesamiento" 
+                            onerror="this.src='https://placehold.co/600x400/16211c/e4f8b2?text=Rolas+de+Pino+Caribe'"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex items-end justify-between p-4">
+                            <span class="text-[11px] text-white font-mono">Rolas de Pino Caribe 100%</span>
+                            <i class="ph-fill ph-tree-evergreen text-lime-pale"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             3. INTERACTIVE 3D ISOMETRIC PLYWOOD ENGINEERING SECTION
+             ========================================== -->
+        <section id="proceso" class="px-4 sm:px-8 lg:px-12 pb-20 reveal">
+            <div class="bg-forest-card rounded-2xl p-6 sm:p-10 lg:p-16 border border-gray-200/60">
+                
+                <!-- Top Row: Interactive 3D Isometric Plywood Stack + Controls -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-14">
+                    
+                    <!-- Left: Interactive 3D Isometric Multi-Layer Plywood (Tablero Contrachapado) -->
+                    <div class="lg:col-span-6 flex flex-col items-center">
+                        <div id="plywood-3d-stage" class="relative w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-200/80 transition-all duration-500 cursor-pointer group" onclick="togglePlywoodExplosion()">
+                            
+                            <!-- Top Status Pill inside 3D Card -->
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-mono text-[10px] uppercase tracking-wider bg-forest-dark text-lime-pale px-2.5 py-1 rounded">
+                                    Vista Isométrica 3D • <span id="caliber-label">18 mm (Estructural)</span>
+                                </span>
+                                <button type="button" class="text-[11px] font-mono text-imaya-green hover:underline flex items-center gap-1">
+                                    <i class="ph-bold ph-arrows-out-line-vertical"></i>
+                                    <span id="explode-btn-text">Desplegar Capas 90°</span>
+                                </button>
+                            </div>
+
+                            <!-- Interactive Isometric SVG Cross-Laminated Plywood Illustration -->
+                            <svg id="plywood-svg" viewBox="0 0 440 300" class="w-full h-auto drop-shadow-md overflow-visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Base Industrial Platform -->
+                                <path d="M55 225L210 150L365 225L210 295L55 225Z" fill="#E5E9EC"/>
+                                <path d="M55 225L210 295V302L55 232V225Z" fill="#CBD2D9"/>
+                                <path d="M365 225L210 295V302L365 232V225Z" fill="#B0BAC5"/>
+
+                                <!-- Layer 5 (Bottom Contracara B - Longitudinal Grain) -->
+                                <g class="ply-layer ply-layer-5" style="transform: translate(0px, 34px);">
+                                    <path d="M85 160L210 100L335 160L210 220L85 160Z" fill="#C99355" stroke="#7A491D" stroke-width="1"/>
+                                    <path d="M85 160L210 220V229L85 169V160Z" fill="#A67238"/>
+                                    <path d="M335 160L210 220V229L335 169V160Z" fill="#8C5B25"/>
+                                    <g class="ply-callout">
+                                        <line x1="315" y1="170" x2="365" y2="170" stroke="#138844" stroke-width="1.2" stroke-dasharray="2 2"/>
+                                        <rect x="365" y="160" width="70" height="18" rx="3" fill="#142019"/>
+                                        <text x="400" y="172" text-anchor="middle" fill="#E4F8B2" font-family="JetBrains Mono, monospace" font-size="7">CONTRACARA B</text>
+                                    </g>
+                                </g>
+
+                                <!-- Layer 4 (Cross-Grain Core Sheet 90°) -->
+                                <g class="ply-layer ply-layer-4" style="transform: translate(0px, 18px);">
+                                    <path d="M85 160L210 100L335 160L210 220L85 160Z" fill="#E0B278" stroke="#7A491D" stroke-width="1"/>
+                                    <!-- 90 deg Cross Grain Texture -->
+                                    <path d="M160 135L275 190" stroke="#B88346" stroke-width="1" stroke-dasharray="4 3"/>
+                                    <path d="M130 150L245 205" stroke="#B88346" stroke-width="1" stroke-dasharray="4 3"/>
+                                    <path d="M85 160L210 220V229L85 169V160Z" fill="#94612A"/>
+                                    <path d="M335 160L210 220V229L335 169V160Z" fill="#B88346"/>
+                                    <g class="ply-callout">
+                                        <line x1="105" y1="168" x2="55" y2="168" stroke="#138844" stroke-width="1.2" stroke-dasharray="2 2"/>
+                                        <rect x="2" y="158" width="66" height="18" rx="3" fill="#142019"/>
+                                        <text x="35" y="170" text-anchor="middle" fill="#E4F8B2" font-family="JetBrains Mono, monospace" font-size="7">VETA CRUZADA</text>
+                                    </g>
+                                </g>
+
+                                <!-- Layer 3 (Central Structural Core + Phenolic Bond) -->
+                                <g class="ply-layer ply-layer-3" style="transform: translate(0px, 2px);">
+                                    <path d="M85 160L210 100L335 160L210 220L85 160Z" fill="#D19E61" stroke="#138844" stroke-width="1.2"/>
+                                    <path d="M85 160L210 220V230L85 170V160Z" fill="#B58042"/>
+                                    <path d="M335 160L210 220V230L335 170V160Z" fill="#99672D"/>
+                                    <g class="ply-callout">
+                                        <line x1="320" y1="162" x2="365" y2="162" stroke="#138844" stroke-width="1.2"/>
+                                        <rect x="365" y="152" width="72" height="18" rx="3" fill="#138844"/>
+                                        <text x="401" y="164" text-anchor="middle" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="7">RESINA FENÓLICA</text>
+                                    </g>
+                                </g>
+
+                                <!-- Layer 2 (Upper Cross-Grain Sheet 90°) -->
+                                <g class="ply-layer ply-layer-2" style="transform: translate(0px, -14px);">
+                                    <path d="M85 160L210 100L335 160L210 220L85 160Z" fill="#E6BC87" stroke="#7A491D" stroke-width="1"/>
+                                    <path d="M165 132L280 187" stroke="#BA8548" stroke-width="1" stroke-dasharray="4 3"/>
+                                    <path d="M85 160L210 220V229L85 169V160Z" fill="#9E6A30"/>
+                                    <path d="M335 160L210 220V229L335 169V160Z" fill="#C48F52"/>
+                                </g>
+
+                                <!-- Layer 1 (Top Sanded Pino Caribe Face Veneer - Cara A) -->
+                                <g class="ply-layer ply-layer-1" style="transform: translate(0px, -30px);">
+                                    <path d="M85 160L210 100L335 160L210 220L85 160Z" fill="#F5D7A8" stroke="#138844" stroke-width="1.6"/>
+                                    <!-- Natural Pine Wood Grain Lines on Top Surface -->
+                                    <path d="M130 155C170 140 200 135 245 120" stroke="#D4A366" stroke-width="1.3" stroke-linecap="round"/>
+                                    <path d="M155 173C195 157 230 147 275 135" stroke="#D4A366" stroke-width="1.3" stroke-linecap="round"/>
+                                    <path d="M180 190C220 173 255 163 300 149" stroke="#D4A366" stroke-width="1.3" stroke-linecap="round"/>
+                                    <path d="M85 160L210 220V229L85 169V160Z" fill="#CC995A"/>
+                                    <path d="M335 160L210 220V229L335 169V160Z" fill="#B38042"/>
+                                    <!-- Quality Stamp Badge on Board -->
+                                    <g transform="translate(184, 146)">
+                                        <ellipse cx="26" cy="12" rx="28" ry="12" fill="#142019"/>
+                                        <text x="26" y="15" text-anchor="middle" fill="#E4F8B2" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700">IMAYA</text>
+                                    </g>
+                                    <g class="ply-callout">
+                                        <line x1="115" y1="145" x2="65" y2="125" stroke="#138844" stroke-width="1.2"/>
+                                        <rect x="4" y="112" width="72" height="18" rx="3" fill="#142019"/>
+                                        <text x="40" y="124" text-anchor="middle" fill="#E4F8B2" font-family="JetBrains Mono, monospace" font-size="7">CARA A LIJADA</text>
+                                    </g>
+                                </g>
+                            </svg>
+
+                            <p class="text-center text-[11px] text-gray-400 font-mono mt-1">
+                                Haz clic sobre el tablero para separar o unir las chapas de Pino Caribe
+                            </p>
+                        </div>
+
+                        <!-- Interactive Thickness / Caliber Selector Buttons -->
+                        <div class="flex flex-wrap items-center justify-center gap-2 mt-4">
+                            <span class="text-xs font-mono text-gray-500 mr-1">Calibre:</span>
+                            <button type="button" onclick="setPlywoodCaliber('6 mm (Revestimiento)', 0.55, this)" class="caliber-btn px-3 py-1.5 rounded text-xs font-mono bg-white border border-gray-200 text-gray-700 hover:border-imaya-green transition">6mm</button>
+                            <button type="button" onclick="setPlywoodCaliber('9 mm (Carpintería)', 0.7, this)" class="caliber-btn px-3 py-1.5 rounded text-xs font-mono bg-white border border-gray-200 text-gray-700 hover:border-imaya-green transition">9mm</button>
+                            <button type="button" onclick="setPlywoodCaliber('12 mm (Mueblería)', 0.85, this)" class="caliber-btn px-3 py-1.5 rounded text-xs font-mono bg-white border border-gray-200 text-gray-700 hover:border-imaya-green transition">12mm</button>
+                            <button type="button" onclick="setPlywoodCaliber('15 mm (Multipropósito)', 0.95, this)" class="caliber-btn px-3 py-1.5 rounded text-xs font-mono bg-white border border-gray-200 text-gray-700 hover:border-imaya-green transition">15mm</button>
+                            <button type="button" onclick="setPlywoodCaliber('18 mm (Encofrado Estructural)', 1, this)" class="caliber-btn px-3 py-1.5 rounded text-xs font-mono bg-forest-dark text-lime-pale border border-forest-dark transition">18mm</button>
+                        </div>
+                    </div>
+
+                    <!-- Right: Purpose Text -->
+                    <div class="lg:col-span-6">
+                        <span class="font-mono text-xs text-imaya-green font-medium tracking-wider block mb-3">[ Ingeniería en Pino Caribe ]</span>
+                        <h2 class="text-3xl sm:text-4xl font-normal tracking-tight leading-[1.18] text-forest-dark max-w-md mb-4">
+                            Firmeza Multicapa que Resiste Obra y Humedad
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-lg mb-6">
+                            Cada lámina de <strong>Maderas IMAYA</strong> está construida superponiendo chapas impares de Pino Caribe con la veta cruzada a 90 grados. Este diseño equilibra las tensiones internas de la madera, evitando deformaciones y ofreciendo un agarre de clavos y tornillos insuperable.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 max-w-md bg-white p-4 rounded-xl border border-gray-200/70">
+                            <div>
+                                <div class="text-[11px] font-mono text-gray-400 uppercase">Formato Estándar</div>
+                                <div class="text-sm font-semibold text-forest-dark">1.22 m × 2.44 m (4'×8')</div>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-mono text-gray-400 uppercase">Prensado Térmico</div>
+                                <div class="text-sm font-semibold text-imaya-green">Alta Adherencia Fenólica</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: 3 Pillars + CTA Button -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-10 border-t border-gray-200/80 items-end">
+                    <div>
+                        <h3 class="text-xs font-semibold text-gray-900 mb-2">1. Selección Forestal</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Rolas de Pino Caribe seleccionadas bajo estrictos estándares de densidad, diámetro y humedad controlada.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xs font-semibold text-gray-900 mb-2">2. Prensado de Alta Firmeza</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Tecnología de encolado de alta adherencia y prensado térmico para máxima estabilidad dimensional.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xs font-semibold text-gray-900 mb-2">3. Logística y Despacho</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Carga rápida con montacargas y despacho seguro desde la Carretera Panamericana, San Felipe, Yaracuy.
+                        </p>
+                    </div>
+                    <div class="lg:text-right">
+                        <button onclick="openModal('Ficha Técnica de Contrachapado')" class="inline-block bg-forest-dark hover:bg-gray-800 text-white text-xs font-medium px-5 py-2.5 rounded transition">
+                            Ver Especificaciones
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             4. KEY CAPABILITIES (INTERACTIVE HOVER CARDS)
+             ========================================== -->
+        <section id="capacidades" class="px-6 sm:px-10 lg:px-14 py-16 lg:py-24 reveal">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="font-mono text-xs text-imaya-green font-medium tracking-wider block mb-3">[ Capacidades Clave ]</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-forest-dark leading-snug">
+                    Asóciate con IMAYA para superar los retos más exigentes en construcción y carpintería
+                </h2>
+            </div>
+
+            <!-- 4 Interactive Cards (Hover turns pale lime & reveals description) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                
+                <!-- Card 1 -->
+                <div class="group bg-forest-card hover:bg-lime-pale rounded-xl p-6 min-h-[240px] flex flex-col justify-between transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md">
+                    <div class="w-8 h-8 rounded-full border border-gray-300 group-hover:border-forest-dark/40 flex items-center justify-center text-xs font-medium text-gray-700">
+                        1
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-base font-semibold text-forest-dark mb-1 transition-transform duration-300 group-hover:-translate-y-1">
+                            Contrachapado Pino Caribe
+                        </h3>
+                        <p class="text-xs text-forest-dark/80 leading-relaxed max-h-0 opacity-0 group-hover:max-h-28 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                            Tableros multicapa formato 1.22m x 2.44m con resistencia superior a la flexión, ideales para uso estructural e interior.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-forest-card hover:bg-lime-pale rounded-xl p-6 min-h-[240px] flex flex-col justify-between transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md">
+                    <div class="w-8 h-8 rounded-full border border-gray-300 group-hover:border-forest-dark/40 flex items-center justify-center text-xs font-medium text-gray-700">
+                        2
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-base font-semibold text-forest-dark mb-1 transition-transform duration-300 group-hover:-translate-y-1">
+                            Construcción y Encofrado
+                        </h3>
+                        <p class="text-xs text-forest-dark/80 leading-relaxed max-h-0 opacity-0 group-hover:max-h-28 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                            Firmeza garantizada para vaciados de concreto, losas, columnas y estructuras temporales con alto índice de reutilización.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-forest-card hover:bg-lime-pale rounded-xl p-6 min-h-[240px] flex flex-col justify-between transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md">
+                    <div class="w-8 h-8 rounded-full border border-gray-300 group-hover:border-forest-dark/40 flex items-center justify-center text-xs font-medium text-gray-700">
+                        3
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-base font-semibold text-forest-dark mb-1 transition-transform duration-300 group-hover:-translate-y-1">
+                            Carpintería y Mueblería
+                        </h3>
+                        <p class="text-xs text-forest-dark/80 leading-relaxed max-h-0 opacity-0 group-hover:max-h-28 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                            Caras limpias de veta cálida, lijado uniforme y excelente agarre de tornillería para cocinas, closets y mobiliario comercial.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group bg-forest-card hover:bg-lime-pale rounded-xl p-6 min-h-[240px] flex flex-col justify-between transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md">
+                    <div class="w-8 h-8 rounded-full border border-gray-300 group-hover:border-forest-dark/40 flex items-center justify-center text-xs font-medium text-gray-700">
+                        4
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-base font-semibold text-forest-dark mb-1 transition-transform duration-300 group-hover:-translate-y-1">
+                            Suministro Mayorista
+                        </h3>
+                        <p class="text-xs text-forest-dark/80 leading-relaxed max-h-0 opacity-0 group-hover:max-h-28 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                            Inventario constante en nuestra sede de San Felipe para abastecer ferreterías, madereras y grandes desarrollos sin demoras.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             5. OUR SERVICES / PRODUCT LINES (HORIZONTAL ROWS WITH COHERENT WOOD IMAGERY)
+             ========================================== -->
+        <section id="soluciones" class="px-6 sm:px-10 lg:px-14 py-16 lg:py-24 reveal">
+            <span class="font-mono text-xs text-imaya-green font-medium tracking-wider block mb-8">[ Nuestras Líneas y Soluciones en Madera ]</span>
+
+            <div class="divide-y divide-gray-200 border-t border-b border-gray-200">
+                
+                <!-- Product Row 1: Stacked Plywood Sheets -->
+                <div class="py-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center group cursor-pointer" onclick="openModal('Cotizar Contraenchapado de Pino Caribe')">
+                    <div class="lg:col-span-6 pr-4">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-[11px] font-mono bg-lime-pale text-forest-dark px-2.5 py-0.5 rounded font-medium">1.22 x 2.44 m</span>
+                            <span class="text-[11px] font-mono text-gray-400">6mm • 9mm • 12mm • 15mm • 18mm</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-medium text-forest-dark group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-2">
+                            Contraenchapado de Pino Caribe
+                            <i class="ph-bold ph-arrow-up-right text-base opacity-0 group-hover:opacity-100 text-imaya-green transition"></i>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-500 mt-2 max-w-md leading-relaxed">
+                            Láminas fabricadas con chapas seleccionadas de Pino Caribe, prensadas al calor para ofrecer firmeza superior, estabilidad y durabilidad comprobada.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="h-40 sm:h-48 w-full rounded-xl overflow-hidden relative shadow-sm">
+                            <img 
+                                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1000&q=85" 
+                                alt="Láminas de contraenchapado de Pino Caribe apiladas" 
+                                onerror="this.src='https://placehold.co/800x300/16211c/e4f8b2?text=Contraenchapado+Pino+Caribe'"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                            >
+                            <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-lime-pale text-[10px] font-mono px-2.5 py-1 rounded">
+                                Tableros Multicapa
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Row 2: Timber Structure & Construction Formwork -->
+                <div class="py-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center group cursor-pointer" onclick="openModal('Cotizar Madera para Construcción y Encofrado')">
+                    <div class="lg:col-span-6 pr-4">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-[11px] font-mono bg-gray-100 text-gray-700 px-2.5 py-0.5 rounded">Grado Estructural • 15mm / 18mm</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-medium text-forest-dark group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-2">
+                            Aliado en Construcción y Encofrado
+                            <i class="ph-bold ph-arrow-up-right text-base opacity-0 group-hover:opacity-100 text-imaya-green transition"></i>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-500 mt-2 max-w-md leading-relaxed">
+                            Tableros de alta densidad pensados para soportar el empuje del concreto en obra civil, losas, columnas, techos y cerramientos perimetrales.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="h-40 sm:h-48 w-full rounded-xl overflow-hidden relative shadow-sm">
+                            <img 
+                                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85" 
+                                alt="Estructura de madera y construcción civil con tableros IMAYA" 
+                                onerror="this.src='https://placehold.co/800x300/16211c/e4f8b2?text=Construccion+y+Encofrado'"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                            >
+                            <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-lime-pale text-[10px] font-mono px-2.5 py-1 rounded">
+                                Alta Firmeza en Obra
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Row 3: Woodworking & Carpentry Workshop -->
+                <div class="py-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center group cursor-pointer" onclick="openModal('Cotizar Línea de Carpintería y Mueblería')">
+                    <div class="lg:col-span-6 pr-4">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-[11px] font-mono bg-gray-100 text-gray-700 px-2.5 py-0.5 rounded">Acabado Lijado Superior • Cara A/B</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-medium text-forest-dark group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-2">
+                            Soluciones para Carpintería y Diseño
+                            <i class="ph-bold ph-arrow-up-right text-base opacity-0 group-hover:opacity-100 text-imaya-green transition"></i>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-500 mt-2 max-w-md leading-relaxed">
+                            Superficies uniformes con la veta cálida del Pino Caribe, listas para corte preciso, entintado, barnizado o laminado en mobiliario e interiorismo.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="h-40 sm:h-48 w-full rounded-xl overflow-hidden relative shadow-sm">
+                            <img 
+                                src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=85" 
+                                alt="Taller de carpintería cortando madera contrachapada con precisión" 
+                                onerror="this.src='https://placehold.co/800x300/16211c/e4f8b2?text=Carpinteria+y+Diseno'"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                            >
+                            <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-lime-pale text-[10px] font-mono px-2.5 py-1 rounded">
+                                Corte Limpio Sin Vacíos
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Row 4: Timber Logs & Wholesale Distribution -->
+                <div class="py-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center group cursor-pointer" onclick="openModal('Cotizar Importación y Distribución al Mayor')">
+                    <div class="lg:col-span-6 pr-4">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-[11px] font-mono bg-gray-100 text-gray-700 px-2.5 py-0.5 rounded">Despacho Nacional • Yaracuy</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-medium text-forest-dark group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-2">
+                            Importación y Distribución Mayorista
+                            <i class="ph-bold ph-arrow-up-right text-base opacity-0 group-hover:opacity-100 text-imaya-green transition"></i>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-500 mt-2 max-w-md leading-relaxed">
+                            Abastecemos distribuidores, ferreterías, aserraderos y contratistas en toda Venezuela desde nuestra planta en la Carretera Panamericana, San Felipe.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="h-40 sm:h-48 w-full rounded-xl overflow-hidden relative shadow-sm">
+                            <img 
+                                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=85" 
+                                alt="Transporte y apilado industrial de madera de Pino Caribe" 
+                                onerror="this.src='https://placehold.co/800x300/16211c/e4f8b2?text=Importacion+y+Distribucion'"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                            >
+                            <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-lime-pale text-[10px] font-mono px-2.5 py-1 rounded">
+                                Suministro por Paleta o Gandola
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             6. SUCCESS STORIES (INTERACTIVE CAROUSEL)
+             ========================================== -->
+        <section id="historias" class="px-6 sm:px-10 lg:px-14 py-16 lg:py-24 reveal">
+            <!-- Header -->
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <span class="font-mono text-xs text-imaya-green font-medium tracking-wider block mb-2">[ Nuestro Respaldo ]</span>
+                <h2 class="text-3xl sm:text-4xl font-normal tracking-tight text-forest-dark mb-4">
+                    Aliados que Construyen con IMAYA
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6">
+                    Descubre cómo constructoras, carpinteros industriales y distribuidores en toda Venezuela confían en la firmeza de nuestra madera contrachapada.
+                </p>
+                <a href="https://www.instagram.com/maderas.imaya/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-lime-pale hover:bg-lime-hover text-forest-dark text-xs font-semibold px-4 py-2.5 rounded transition">
+                    <i class="ph-bold ph-instagram-logo text-sm"></i> Ver Obras en @maderas.imaya
+                </a>
+            </div>
+
+            <!-- Interactive Cards Carousel -->
+            <div id="stories-carousel" class="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-4">
+                
+                <!-- Story Card 1 (Interactive Quote Overlay on Hover/Click) -->
+                <div class="min-w-[280px] sm:min-w-[330px] flex-1 snap-start bg-forest-card rounded-xl overflow-hidden relative group cursor-pointer select-none" onclick="toggleStoryCard(this)">
+                    <div class="h-[340px] w-full overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" 
+                            alt="Ingeniera de Planta y Calidad" 
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                        >
+                    </div>
+                    <div class="p-4 bg-white flex items-center justify-between border-t border-gray-100">
+                        <div>
+                            <div class="text-[11px] font-mono uppercase text-gray-500">DESARROLLOS DEL CENTRO</div>
+                            <div class="text-xs font-medium text-gray-800">Valencia, Carabobo</div>
+                        </div>
+                        <span class="text-xs font-bold tracking-[0.15em] uppercase text-forest-dark">CONSTRUCCIÓN</span>
+                    </div>
+
+                    <!-- Hover / Active Flip Overlay -->
+                    <div class="story-overlay opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto absolute inset-0 bg-forest-card p-6 flex flex-col justify-between z-10">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-gray-200 pb-4 mb-5">
+                                <div>
+                                    <div class="text-[11px] font-mono uppercase text-gray-500">DESARROLLOS DEL CENTRO</div>
+                                    <div class="text-xs font-medium text-gray-800">Valencia, Carabobo</div>
+                                </div>
+                                <span class="text-xs font-bold tracking-[0.15em] uppercase text-imaya-green">OBRA CIVIL</span>
+                            </div>
+                            <p class="text-sm text-forest-dark leading-relaxed">
+                                "Trabajar con Maderas IMAYA nos permitió estandarizar todos nuestros tableros de encofrado de 18mm con una firmeza extraordinaria y entregas puntuales directo en obra."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-200 flex items-end justify-between">
+                            <div>
+                                <div class="text-[10px] font-mono uppercase text-gray-500 mb-1">RESULTADO :</div>
+                                <div class="text-base font-semibold text-forest-dark leading-tight">+35% vida útil en<br>ciclos de encofrado</div>
+                            </div>
+                            <span class="bg-forest-dark text-white text-[11px] px-3 py-1.5 rounded">Cotizar igual</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Card 2 -->
+                <div class="min-w-[280px] sm:min-w-[330px] flex-1 snap-start bg-forest-card rounded-xl overflow-hidden relative group cursor-pointer select-none" onclick="toggleStoryCard(this)">
+                    <div class="h-[340px] w-full overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80" 
+                            alt="Director de Carpintería Industrial" 
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                        >
+                    </div>
+                    <div class="p-4 bg-white flex items-center justify-between border-t border-gray-100">
+                        <div>
+                            <div class="text-[11px] font-mono uppercase text-gray-500">GRUPO MADERERO LARA</div>
+                            <div class="text-xs font-medium text-gray-800">Barquisimeto, Lara</div>
+                        </div>
+                        <span class="text-xs font-bold flex items-center gap-1 text-forest-dark"><i class="ph-fill ph-tree text-imaya-green"></i> CARPINTERÍA</span>
+                    </div>
+
+                    <!-- Hover Overlay -->
+                    <div class="story-overlay opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto absolute inset-0 bg-forest-card p-6 flex flex-col justify-between z-10">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-gray-200 pb-4 mb-5">
+                                <div>
+                                    <div class="text-[11px] font-mono uppercase text-gray-500">GRUPO MADERERO LARA</div>
+                                    <div class="text-xs font-medium text-gray-800">Barquisimeto, Lara</div>
+                                </div>
+                                <span class="text-xs font-bold flex items-center gap-1 text-imaya-green">CARPINTERÍA</span>
+                            </div>
+                            <p class="text-sm text-forest-dark leading-relaxed">
+                                "El contraenchapado de Pino Caribe de IMAYA no presenta vacíos internos al cortar. Nuestros carpinteros ahorran tiempo en lijado y logran muebles de primera."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-200 flex items-end justify-between">
+                            <div>
+                                <div class="text-[10px] font-mono uppercase text-gray-500 mb-1">RESULTADO :</div>
+                                <div class="text-base font-semibold text-forest-dark leading-tight">0% desperdicio por<br>alabeo o delaminación</div>
+                            </div>
+                            <span class="bg-forest-dark text-white text-[11px] px-3 py-1.5 rounded">Cotizar igual</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Card 3 -->
+                <div class="min-w-[280px] sm:min-w-[330px] flex-1 snap-start bg-forest-card rounded-xl overflow-hidden relative group cursor-pointer select-none" onclick="toggleStoryCard(this)">
+                    <div class="h-[340px] w-full overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80" 
+                            alt="Distribuidor Ferretero" 
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                        >
+                    </div>
+                    <div class="p-4 bg-white flex items-center justify-between border-t border-gray-100">
+                        <div>
+                            <div class="text-[11px] font-mono uppercase text-gray-500">FERRE-SUMINISTROS C.A.</div>
+                            <div class="text-xs font-medium text-gray-800">Caracas, Distrito Capital</div>
+                        </div>
+                        <span class="text-xs font-bold tracking-wider uppercase flex items-center gap-1 text-forest-dark">DISTRIBUIDOR</span>
+                    </div>
+
+                    <!-- Hover Overlay -->
+                    <div class="story-overlay opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto absolute inset-0 bg-forest-card p-6 flex flex-col justify-between z-10">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-gray-200 pb-4 mb-5">
+                                <div>
+                                    <div class="text-[11px] font-mono uppercase text-gray-500">FERRE-SUMINISTROS C.A.</div>
+                                    <div class="text-xs font-medium text-gray-800">Caracas, Distrito Capital</div>
+                                </div>
+                                <span class="text-xs font-bold tracking-wider uppercase text-imaya-green">MAYORISTA</span>
+                            </div>
+                            <p class="text-sm text-forest-dark leading-relaxed">
+                                "La cercanía de su planta en la Carretera Panamericana en Yaracuy nos garantiza reposición de inventario rápida y paquetes perfectamente flejados."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-200 flex items-end justify-between">
+                            <div>
+                                <div class="text-[10px] font-mono uppercase text-gray-500 mb-1">RESULTADO :</div>
+                                <div class="text-base font-semibold text-forest-dark leading-tight">Despacho directo<br>en menos de 48h</div>
+                            </div>
+                            <span class="bg-forest-dark text-white text-[11px] px-3 py-1.5 rounded">Cotizar igual</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Card 4 -->
+                <div class="min-w-[280px] sm:min-w-[330px] flex-1 snap-start bg-forest-card rounded-xl overflow-hidden relative group cursor-pointer select-none" onclick="toggleStoryCard(this)">
+                    <div class="h-[340px] w-full overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=80" 
+                            alt="Arquitecto Proyectista" 
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                        >
+                    </div>
+                    <div class="p-4 bg-white flex items-center justify-between border-t border-gray-100">
+                        <div>
+                            <div class="text-[11px] font-mono uppercase text-gray-500">ESTUDIO ARQ & MADERA</div>
+                            <div class="text-xs font-medium text-gray-800">San Felipe, Yaracuy</div>
+                        </div>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-forest-dark">ARQUITECTURA</span>
+                    </div>
+
+                    <!-- Hover Overlay -->
+                    <div class="story-overlay opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto absolute inset-0 bg-forest-card p-6 flex flex-col justify-between z-10">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-gray-200 pb-4 mb-5">
+                                <div>
+                                    <div class="text-[11px] font-mono uppercase text-gray-500">ESTUDIO ARQ & MADERA</div>
+                                    <div class="text-xs font-medium text-gray-800">San Felipe, Yaracuy</div>
+                                </div>
+                                <span class="text-xs font-semibold uppercase tracking-widest text-imaya-green">DISEÑO</span>
+                            </div>
+                            <p class="text-sm text-forest-dark leading-relaxed">
+                                "La calidez visual de la veta del Pino Caribe de IMAYA nos permitió diseñar revestimientos acústicos y mobiliario corporativo con sello venezolano."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-200 flex items-end justify-between">
+                            <div>
+                                <div class="text-[10px] font-mono uppercase text-gray-500 mb-1">RESULTADO :</div>
+                                <div class="text-base font-semibold text-forest-dark leading-tight">100% madera de<br>origen sostenible</div>
+                            </div>
+                            <span class="bg-forest-dark text-white text-[11px] px-3 py-1.5 rounded">Cotizar igual</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Carousel Pagination Dots -->
+            <div class="flex justify-center items-center gap-2 mt-6">
+                <button onclick="scrollCarousel('stories-carousel', -350)" class="p-1.5 rounded-full bg-gray-100 hover:bg-lime-pale text-gray-700 transition" aria-label="Anterior">
+                    <i class="ph ph-caret-left text-xs"></i>
+                </button>
+                <div class="flex gap-1.5 px-3 py-1.5 bg-gray-100 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-forest-dark"></span>
+                    <span class="w-2 h-2 rounded-full bg-gray-300"></span>
+                    <span class="w-2 h-2 rounded-full bg-gray-300"></span>
+                    <span class="w-2 h-2 rounded-full bg-gray-300"></span>
+                </div>
+                <button onclick="scrollCarousel('stories-carousel', 350)" class="p-1.5 rounded-full bg-gray-100 hover:bg-lime-pale text-gray-700 transition" aria-label="Siguiente">
+                    <i class="ph ph-caret-right text-xs"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             7. IMPACT METRICS (LIME GREEN BANNER WITH ANIMATED COUNTERS)
+             ========================================== -->
+        <section class="px-4 sm:px-8 lg:px-12 py-10 reveal" id="metrics-section">
+            <div class="bg-lime-pale rounded-2xl p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-between shadow-sm">
+                
+                <!-- Left Column -->
+                <div class="lg:col-span-5 flex flex-col justify-between">
+                    <div>
+                        <span class="font-mono text-xs text-forest-dark/70 tracking-wider block mb-3">[ Métricas de Respaldo ]</span>
+                        <h2 class="text-3xl sm:text-4xl font-normal tracking-tight text-forest-dark leading-tight">
+                            Resultados Medibles.<br>
+                            Firmeza Garantizada
+                        </h2>
+                        <p class="text-xs sm:text-sm text-forest-dark/80 mt-4 max-w-sm leading-relaxed">
+                            Cada paquete de madera contrachapada que sale de nuestra planta en San Felipe, Yaracuy pasa por un control riguroso de espesor, prensado y escuadrado.
+                        </p>
+                    </div>
+                    <div class="mt-8 lg:mt-0">
+                        <button onclick="openModal('Solicitar Catálogo y Precios al Mayor')" class="bg-forest-dark hover:bg-gray-800 text-white text-xs font-medium px-5 py-2.5 rounded transition shadow-sm">
+                            Solicitar Lista de Espesores
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: 2x2 Big Animated Metrics Grid -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-12">
+                    <div>
+                        <div class="text-5xl sm:text-6xl font-normal tracking-tight text-forest-dark mb-2">
+                            <span class="metric-counter" data-target="100">0</span><span class="text-forest-dark/40">%</span>
+                        </div>
+                        <p class="text-xs text-forest-dark/80 max-w-[230px] leading-relaxed">
+                            Pino Caribe seleccionado con control de humedad y densidad estructural
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="text-5xl sm:text-6xl font-normal tracking-tight text-forest-dark mb-2">
+                            <span class="metric-counter" data-target="99">0</span><span class="text-forest-dark/40">%</span>
+                        </div>
+                        <p class="text-xs text-forest-dark/80 max-w-[230px] leading-relaxed">
+                            cumplimiento y puntualidad en despachos de carga pesada a nivel nacional
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="text-5xl sm:text-6xl font-normal tracking-tight text-forest-dark mb-2">
+                            +<span class="metric-counter" data-target="15">0</span>K
+                        </div>
+                        <p class="text-xs text-forest-dark/80 max-w-[230px] leading-relaxed">
+                            láminas contrachapadas suministradas para obras civiles y carpinterías
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="text-5xl sm:text-6xl font-normal tracking-tight text-forest-dark mb-2">
+                            +<span class="metric-counter" data-target="40">0</span><span class="text-forest-dark/40">%</span>
+                        </div>
+                        <p class="text-xs text-forest-dark/80 max-w-[230px] leading-relaxed">
+                            mayor resistencia al alabeo gracias al encolado fenólico de chapas cruzadas
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             8. EXPERTISE / APLICACIONES SECTION (COHERENT WOOD & CARPENTRY PHOTOS)
+             ========================================== -->
+        <section id="aplicaciones" class="px-6 sm:px-10 lg:px-14 py-16 lg:py-24 reveal">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="font-mono text-xs text-imaya-green font-medium tracking-wider block mb-3">[ Aplicaciones y Guía Técnica ]</span>
+                    <h2 class="text-3xl sm:text-4xl font-normal tracking-tight text-forest-dark leading-tight max-w-md">
+                        Soluciones en Madera que Perduran en cada Proyecto
+                    </h2>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="scrollCarousel('expertise-carousel', -400)" class="p-2.5 rounded-full border border-gray-200 hover:bg-lime-pale transition" aria-label="Desplazar a la izquierda">
+                        <i class="ph ph-arrow-left text-sm"></i>
+                    </button>
+                    <button onclick="scrollCarousel('expertise-carousel', 400)" class="p-2.5 rounded-full border border-gray-200 hover:bg-lime-pale transition" aria-label="Desplazar a la derecha">
+                        <i class="ph ph-arrow-right text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Horizontal Scrollable Application Cards with Coherent Wood Photos -->
+            <div id="expertise-carousel" class="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-6">
+                
+                <!-- Card 1: Stacked Plywood & Formwork -->
+                <article class="min-w-[300px] sm:min-w-[380px] flex-1 snap-start group cursor-pointer" onclick="openModal('Asesoría: Encofrados de Alto Rendimiento')">
+                    <div class="h-60 rounded-xl overflow-hidden mb-4 relative">
+                        <img 
+                            src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=85" 
+                            alt="Tableros de madera contrachapada para encofrados y estructuras civiles" 
+                            onerror="this.src='https://placehold.co/800x500/16211c/e4f8b2?text=Encofrados+IMAYA'"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        >
+                        <span class="absolute top-3 left-3 bg-forest-dark/80 backdrop-blur-sm text-lime-pale text-[10px] font-mono px-2.5 py-1 rounded">
+                            15mm • 18mm
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-forest-dark mb-1">Encofrados de Alto Rendimiento</h3>
+                    <div class="flex items-end justify-between gap-4 pb-4 border-b border-gray-100">
+                        <p class="text-xs text-gray-600 max-w-xs leading-relaxed">
+                            Cómo elegir el espesor adecuado (15mm o 18mm) para maximizar los ciclos de reutilización en vaciados de concreto.
+                        </p>
+                        <span class="bg-lime-pale group-hover:bg-lime-hover text-forest-dark text-[11px] font-medium px-3 py-1 rounded shrink-0 transition">
+                            Consultar
+                        </span>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] text-gray-400 pt-3 font-mono">
+                        <span>Uso Estructural • Obra Civil</span>
+                        <span>Pino Caribe</span>
+                    </div>
+                </article>
+
+                <!-- Card 2: Carpentry & Woodworking Workshop -->
+                <article class="min-w-[300px] sm:min-w-[380px] flex-1 snap-start group cursor-pointer" onclick="openModal('Asesoría: Carpintería y Mobiliario')">
+                    <div class="h-60 rounded-xl overflow-hidden mb-4 relative">
+                        <img 
+                            src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=800&q=85" 
+                            alt="Taller de carpintería y herramientas sobre madera de pino" 
+                            onerror="this.src='https://placehold.co/800x500/16211c/e4f8b2?text=Carpinteria+Pino+Caribe'"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        >
+                        <span class="absolute top-3 left-3 bg-forest-dark/80 backdrop-blur-sm text-lime-pale text-[10px] font-mono px-2.5 py-1 rounded">
+                            9mm • 12mm • 15mm
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-forest-dark mb-1">Carpintería y Mueblería Fina</h3>
+                    <div class="flex items-end justify-between gap-4 pb-4 border-b border-gray-100">
+                        <p class="text-xs text-gray-600 max-w-xs leading-relaxed">
+                            Ventajas del contraenchapado de Pino Caribe frente al MDF o aglomerado en cocinas, closets y ambientes húmedos.
+                        </p>
+                        <span class="bg-lime-pale group-hover:bg-lime-hover text-forest-dark text-[11px] font-medium px-3 py-1 rounded shrink-0 transition">
+                            Consultar
+                        </span>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] text-gray-400 pt-3 font-mono">
+                        <span>Grado Carpintería • Lijado</span>
+                        <span>Veta Natural</span>
+                    </div>
+                </article>
+
+                <!-- Card 3: Architectural Wood Ceilings & Cladding -->
+                <article class="min-w-[300px] sm:min-w-[380px] flex-1 snap-start group cursor-pointer" onclick="openModal('Asesoría: Techos, Revestimientos y Entrepisos')">
+                    <div class="h-60 rounded-xl overflow-hidden mb-4 relative">
+                        <img 
+                            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=85" 
+                            alt="Revestimientos interiores y techos en madera de Pino Caribe" 
+                            onerror="this.src='https://placehold.co/800x500/16211c/e4f8b2?text=Techos+y+Revestimientos'"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        >
+                        <span class="absolute top-3 left-3 bg-forest-dark/80 backdrop-blur-sm text-lime-pale text-[10px] font-mono px-2.5 py-1 rounded">
+                            6mm • 9mm • 12mm
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-forest-dark mb-1">Techos, Tabiquería y Revestimientos</h3>
+                    <div class="flex items-end justify-between gap-4 pb-4 border-b border-gray-100">
+                        <p class="text-xs text-gray-600 max-w-xs leading-relaxed">
+                            Soluciones ligeras, cálidas y sismorresistentes para cubiertas de techo, cielorrasos acústicos y divisiones interiores.
+                        </p>
+                        <span class="bg-lime-pale group-hover:bg-lime-hover text-forest-dark text-[11px] font-medium px-3 py-1 rounded shrink-0 transition">
+                            Consultar
+                        </span>
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] text-gray-400 pt-3 font-mono">
+                        <span>Arquitectura • Interiorismo</span>
+                        <span>Calibrado Exacto</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             9. FOOTER CTA BANNER & CLEAN FOOTER
+             ========================================== -->
+        <section id="nosotros" class="px-2 sm:px-4 pb-4 reveal">
+            <!-- Dark Green Banner with Image -->
+            <div class="relative rounded-2xl overflow-hidden min-h-[480px] sm:min-h-[540px] flex flex-col items-center justify-center text-center px-6 py-16 sm:py-20 bg-[#0A1F13]">
+                <!-- Background Image -->
+                <img 
+                    src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1800&q=80" 
+                    alt="Planta Maderas IMAYA en San Felipe, Yaracuy" 
+                    onerror="this.src='https://placehold.co/1600x900/0A1F13/e4f8b2?text=Maderas+IMAYA'"
+                    class="absolute inset-0 w-full h-full object-cover object-center opacity-35 mix-blend-luminosity"
+                >
+                <div class="absolute inset-0 bg-gradient-to-b from-[#0A1F13]/90 via-[#0A1F13]/65 to-[#0A1F13]/95"></div>
+
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <span class="inline-flex items-center gap-1.5 font-mono text-xs text-lime-pale bg-white/10 px-3.5 py-1.5 rounded-full mb-5">
+                        <i class="ph-fill ph-map-pin"></i> Carretera Panamericana, San Felipe, Yaracuy
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-normal tracking-tight text-white leading-[1.12] mb-5">
+                        Construido para un Futuro<br>
+                        más Firme y Sólido
+                    </h2>
+                    <p class="text-xs sm:text-sm text-white/80 leading-relaxed mb-8 max-w-xl mx-auto">
+                        En <strong>INDUSTRIA MADERERA YARACUY C.A. (IMAYACA)</strong> somos tu aliado estratégico en madera contrachapada de Pino Caribe. Ya sea que dirijas una obra civil, una carpintería industrial o una distribuidora ferretera, estamos listos para despachar tu pedido.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center gap-4">
+                        <button onclick="openModal('Solicitar Cotización Directa')" class="bg-lime-pale hover:bg-lime-hover text-forest-dark text-xs sm:text-sm font-semibold px-6 py-3.5 rounded-md transition shadow-lg">
+                            Construyamos tu próximo proyecto — juntos
+                        </button>
+                        <a href="https://www.instagram.com/maderas.imaya/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs sm:text-sm font-medium px-5 py-3.5 rounded-md transition">
+                            <i class="ph-bold ph-instagram-logo text-base text-lime-pale"></i> Ir a @maderas.imaya
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clean White Footer -->
+        <footer class="px-6 sm:px-10 lg:px-14 pt-14 pb-10 bg-white text-forest-dark">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-14 border-b border-gray-100">
+                
+                <!-- Left Brand & Tagline with Custom SVG Logo (Original Brand Colors) -->
+                <div class="lg:col-span-6 flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-10">
+                    <a href="#inicio" class="shrink-0" aria-label="Maderas IMAYA">
+                        <svg viewBox="0 0 280 95" class="h-14 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Stylized Green Pine Tree Icon (#138844) -->
+                            <g fill="#138844">
+                                <path d="M46 10C38 10 32 13 32 16.5C32 19 36 20.5 29 21.5C21 22.5 17 25 18 28.5C19 31.5 28 32 23 33.5C15 35.5 13 38.5 15 41.5C17 44 26 44.5 21 46C12 48 10 51 13 54.5C16 57.5 26 57.5 20 59.5C11 61.5 9 64.5 13 67.5C17 70 28 70 35 70V82H42V70H45V82H52V70C61 70 72 68.5 74 64.5C76 60.5 66 59 58 58.5C67 57.5 74 55 73 51.5C72 48 62 47 55 46.5C65 45.5 72 43 71 39C70 35.5 60 34.5 53 34C62 33 69 30.5 68 26.5C67 23 58 22 52 21.5C58 20 63 17.5 61 14C59 11 52 10 46 10Z" />
+                            </g>
+                            <!-- IMAYA Bold Geometric Wordmark (#231F20) -->
+                            <g fill="#231F20">
+                                <rect x="88" y="34" width="8" height="38" />
+                                <path d="M103 72V34H111L122 50L133 34H141V72H133V47L122 62L111 47V72H103Z" />
+                                <path d="M147 72L161 34H170L184 72H175L172 63H159L156 72H147ZM161.5 56H169.5L165.5 44L161.5 56Z" />
+                                <path d="M196 55L182 34H191L200 48L209 34H218L204 55V72H196V55Z" />
+                                <path d="M216 72L230 34H239L253 72H244L241 63H228L225 72H216ZM230.5 56H238.5L234.5 44L230.5 56Z" />
+                            </g>
+                            <!-- Green Horizontal Rule -->
+                            <rect x="12" y="76" width="242" height="3" fill="#138844" />
+                            <!-- Subtitle -->
+                            <text x="13" y="91" fill="#231F20" font-family="Inter, sans-serif" font-size="10.3" font-weight="700" letter-spacing="1.15">INDUSTRIA MADERERA YARACUY C.A.</text>
+                        </svg>
+                    </a>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-normal tracking-tight text-forest-dark max-w-xs leading-snug mb-2">
+                            Calidad y firmeza en madera contrachapada
+                        </h3>
+                        <p class="text-xs text-gray-500">
+                            Carretera Panamericana, San Felipe, Estado Yaracuy, Venezuela.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Links Columns -->
+                <div class="lg:col-span-6 grid grid-cols-2 sm:grid-cols-4 gap-8 text-xs">
+                    <div>
+                        <h4 class="font-mono text-[10px] uppercase text-gray-400 mb-3 tracking-wider">PRODUCTOS</h4>
+                        <ul class="space-y-2.5 text-gray-700">
+                            <li><a href="#soluciones" class="hover:text-imaya-green">Pino Caribe</a></li>
+                            <li><a href="#soluciones" class="hover:text-imaya-green">Encofrados</a></li>
+                            <li><a href="#soluciones" class="hover:text-imaya-green">Carpintería</a></li>
+                            <li><a href="#metrics-section" class="hover:text-imaya-green">Medidas y Calibres</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-mono text-[10px] uppercase text-gray-400 mb-3 tracking-wider">OPERACIONES</h4>
+                        <ul class="space-y-2.5 text-gray-700">
+                            <li><a href="#proceso" class="hover:text-imaya-green">Planta Yaracuy</a></li>
+                            <li><a href="#soluciones" class="hover:text-imaya-green">Importación</a></li>
+                            <li><a href="#soluciones" class="hover:text-imaya-green">Distribución</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-mono text-[10px] uppercase text-gray-400 mb-3 tracking-wider">NOSOTROS</h4>
+                        <ul class="space-y-2.5 text-gray-700">
+                            <li><a href="#nosotros" class="hover:text-imaya-green">IMAYACA</a></li>
+                            <li><a href="#historias" class="hover:text-imaya-green">Casos de Éxito</a></li>
+                            <li><button onclick="openModal('Contacto Directo IMAYA')" class="hover:text-imaya-green">Contacto</button></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-mono text-[10px] uppercase text-gray-400 mb-3 tracking-wider">CONECTA</h4>
+                        <ul class="space-y-2.5 text-gray-700">
+                            <li>
+                                <a href="https://www.instagram.com/maderas.imaya/" target="_blank" rel="noopener noreferrer" class="hover:text-imaya-green flex items-center gap-1 font-medium">
+                                    <i class="ph-bold ph-instagram-logo"></i> Instagram
+                                </a>
+                            </li>
+                            <li><button onclick="openModal('Solicitar Cotización')" class="hover:text-imaya-green">Ventas al Mayor</button></li>
+                            <li><a href="#aplicaciones" class="hover:text-imaya-green">Guía de Uso</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright & Legal -->
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <div>© 2026 INDUSTRIA MADERERA YARACUY C.A. (IMAYACA). Todos los derechos reservados.</div>
+                <div class="flex gap-6">
+                    <a href="https://www.instagram.com/maderas.imaya/" target="_blank" rel="noopener noreferrer" class="underline hover:text-gray-800">@maderas.imaya</a>
+                    <button onclick="openModal('Términos de Despacho y Venta')" class="underline hover:text-gray-800">Condiciones de Despacho</button>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ==========================================
+         INTERACTIVE MODAL FOR QUOTES & CONTACT
+         ========================================== -->
+    <div id="cta-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative animate-fadeIn">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700" aria-label="Cerrar">
+                <i class="ph ph-x text-xl"></i>
+            </button>
+            <span class="font-mono text-[11px] uppercase text-imaya-green font-semibold tracking-wider block mb-1">[ Maderas IMAYA • Ventas ]</span>
+            <h3 id="modal-title" class="text-2xl font-normal text-forest-dark mb-2">Solicitar Cotización</h3>
+            <p class="text-xs text-gray-500 mb-6">
+                Déjanos tus datos y el requerimiento de láminas contrachapadas. Nuestro equipo en San Felipe, Yaracuy te contactará de inmediato.
+            </p>
+            <form onsubmit="submitForm(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-medium text-gray-700 mb-1">Nombre o Empresa</label>
+                    <input type="text" required placeholder="Ej. Constructora / Carpintería..." class="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg focus:outline-none focus:border-imaya-green">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-gray-700 mb-1">Teléfono / WhatsApp</label>
+                    <input type="tel" required placeholder="+58 412 / 414 / 424..." class="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg focus:outline-none focus:border-imaya-green">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-gray-700 mb-1">Producto / Espesor de Interés</label>
+                    <select class="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg focus:outline-none focus:border-imaya-green bg-white">
+                        <option>Contraenchapado de Pino Caribe (15mm / 18mm - Encofrado)</option>
+                        <option>Contraenchapado de Pino Caribe (9mm / 12mm - Carpintería)</option>
+                        <option>Contraenchapado de Pino Caribe (6mm - Revestimiento)</option>
+                        <option>Compra Mayorista / Distribución por Paleta o Gandola</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-lime-pale hover:bg-lime-hover text-forest-dark font-semibold text-xs py-3.5 rounded-lg transition shadow-sm">
+                    Enviar Solicitud a Ventas
+                </button>
+            </form>
+            <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+                <a href="https://www.instagram.com/maderas.imaya/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-imaya-green font-medium hover:underline">
+                    <i class="ph-bold ph-instagram-logo"></i> También puedes escribirnos por DM en @maderas.imaya
+                </a>
+            </div>
+            <div id="form-success" class="hidden mt-4 p-3 bg-lime-soft text-forest-dark text-xs rounded-lg text-center font-medium">
+                ¡Gracias! Hemos recibido tu solicitud. Nuestro equipo de ventas en Yaracuy se comunicará contigo muy pronto.
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactions & Scroll Reveal -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Horizontal Carousel Scroll Helper
+        function scrollCarousel(id, offset) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollBy({ left: offset, behavior: 'smooth' });
+            }
+        }
+
+        // Toggle Story Card Overlay on Touch Devices
+        function toggleStoryCard(card) {
+            const overlay = card.querySelector('.story-overlay');
+            if (overlay) {
+                overlay.classList.toggle('opacity-100');
+                overlay.classList.toggle('pointer-events-auto');
+            }
+        }
+
+        // Modal Logic
+        const modal = document.getElementById('cta-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const formSuccess = document.getElementById('form-success');
+
+        function openModal(title) {
+            modalTitle.textContent = title || 'Solicitar Cotización';
+            formSuccess.classList.add('hidden');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            formSuccess.classList.remove('hidden');
+            setTimeout(() => {
+                closeModal();
+            }, 1800);
+        }
+
+        // Reveal Elements on Scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
+    <!-- JavaScript for Interactions, 3D Plywood Explosion, Counters & Scroll Reveal -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hero Video Play / Pause Control
+        const heroVideo = document.getElementById('hero-video');
+        const videoToggleIcon = document.getElementById('video-toggle-icon');
+        const videoToggleText = document.getElementById('video-toggle-text');
+
+        function toggleHeroVideo() {
+            if (!heroVideo) return;
+            if (heroVideo.paused) {
+                heroVideo.play();
+                videoToggleIcon.className = 'ph-fill ph-pause text-lime-pale';
+                videoToggleText.textContent = 'Video Aéreo Activo';
+            } else {
+                heroVideo.pause();
+                videoToggleIcon.className = 'ph-fill ph-play text-lime-pale';
+                videoToggleText.textContent = 'Reproducir Video';
+            }
+        }
+
+        // Subtle Floating Forest Particles in Hero Canvas
+        const canvas = document.getElementById('forest-particles');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            for (let i = 0; i < 32; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 2.2 + 0.6,
+                    vx: (Math.random() - 0.5) * 0.35,
+                    vy: -Math.random() * 0.45 - 0.15,
+                    alpha: Math.random() * 0.55 + 0.15
+                });
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.y < 0) p.y = canvas.height;
+                    if (p.x < 0) p.x = canvas.width;
+                    if (p.x > canvas.width) p.x = 0;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(228, 248, 178, ${p.alpha})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animateParticles);
+            }
+            animateParticles();
+        }
+
+        // Interactive 3D Isometric Plywood Layer Explosion Toggle
+        const plywoodStage = document.getElementById('plywood-3d-stage');
+        const explodeBtnText = document.getElementById('explode-btn-text');
+
+        function togglePlywoodExplosion() {
+            if (!plywoodStage) return;
+            plywoodStage.classList.toggle('exploded');
+            const isExploded = plywoodStage.classList.contains('exploded');
+            if (explodeBtnText) {
+                explodeBtnText.textContent = isExploded ? 'Unir Capas del Tablero' : 'Desplegar Capas 90°';
+            }
+        }
+
+        // Interactive Caliber / Thickness Selector for 3D Plywood
+        function setPlywoodCaliber(label, scaleFactor, btnEl) {
+            const caliberLabel = document.getElementById('caliber-label');
+            if (caliberLabel) caliberLabel.textContent = label;
+
+            // Update button active styles
+            document.querySelectorAll('.caliber-btn').forEach(btn => {
+                btn.className = 'caliber-btn px-3 py-1.5 rounded text-xs font-mono bg-white border border-gray-200 text-gray-700 hover:border-imaya-green transition';
+            });
+            if (btnEl) {
+                btnEl.className = 'caliber-btn px-3 py-1.5 rounded text-xs font-mono bg-forest-dark text-lime-pale border border-forest-dark transition';
+            }
+
+            // Trigger explosion briefly to highlight the multi-layer structure
+            if (plywoodStage && !plywoodStage.classList.contains('exploded')) {
+                togglePlywoodExplosion();
+            }
+        }
+
+        // Horizontal Carousel Scroll Helper
+        function scrollCarousel(id, offset) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollBy({ left: offset, behavior: 'smooth' });
+            }
+        }
+
+        // Toggle Story Card Overlay on Touch Devices
+        function toggleStoryCard(card) {
+            const overlay = card.querySelector('.story-overlay');
+            if (overlay) {
+                overlay.classList.toggle('opacity-100');
+                overlay.classList.toggle('pointer-events-auto');
+            }
+        }
+
+        // Modal Logic
+        const modal = document.getElementById('cta-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const formSuccess = document.getElementById('form-success');
+
+        function openModal(title) {
+            modalTitle.textContent = title || 'Solicitar Cotización';
+            formSuccess.classList.add('hidden');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            formSuccess.classList.remove('hidden');
+            setTimeout(() => {
+                closeModal();
+            }, 1800);
+        }
+
+        // Reveal Elements on Scroll + Animated Metric Counters
+        const revealElements = document.querySelectorAll('.reveal');
+        let countersAnimated = false;
+
+        function animateCounters() {
+            if (countersAnimated) return;
+            countersAnimated = true;
+            const counters = document.querySelectorAll('.metric-counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'), 10);
+                const duration = 1600;
+                const startTime = performance.now();
+
+                function updateCounter(now) {
+                    const elapsed = now - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easeOut = 1 - Math.pow(1 - progress, 3);
+                    counter.textContent = Math.floor(easeOut * target);
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                }
+                requestAnimationFrame(updateCounter);
+            });
+        }
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    if (entry.target.id === 'metrics-section') {
+                        animateCounters();
+                    }
+                }
+            });
+        }, { threshold: 0.14 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
