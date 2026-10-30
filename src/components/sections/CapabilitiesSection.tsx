@@ -93,7 +93,10 @@ export function CapabilitiesSection() {
               className="min-w-[280px] sm:min-w-[320px] lg:min-w-[340px] flex-1 snap-start group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-200/80 bg-white"
             >
               {/* Image Container with 4:5 Aspect Ratio */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden">
+              <div
+                style={{ position: "relative" }}
+                className="relative aspect-[4/5] w-full overflow-hidden"
+              >
                 <Image
                   src={item.src}
                   alt={item.title}
@@ -136,7 +139,10 @@ export function CapabilitiesSection() {
             >
               <X className="w-6 h-6" />
             </button>
-            <div className="relative w-full aspect-[4/5] max-h-[82vh] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black">
+            <div
+              style={{ position: "relative" }}
+              className="relative w-full aspect-[4/5] max-h-[82vh] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black"
+            >
               <Image
                 src={selectedImage}
                 alt="Fotografía de Maderas IMAYA"

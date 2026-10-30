@@ -233,6 +233,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
             {/* Slot 4: Foto Patio Industrial y Cargador (Versatilidad & Calibración) */}
             <div
               onClick={() => openLightbox(3)}
+              style={{ position: "relative" }}
               className="h-[170px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
               role="button"
               tabIndex={0}
@@ -248,6 +249,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 src="/images/quality/patio-industrial-yaracuy.jpg"
                 alt="Patio industrial y cargador frontal en planta IMAYA Yaracuy"
                 fill
+                priority
                 sizes="(max-width: 768px) 100vw, 30vw"
                 className="object-cover object-center group-hover:scale-105 transition duration-700"
               />
@@ -277,6 +279,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
             {/* Slot 5: Foto Gandola de Descarga (Rolas de Pino Caribe 100%) */}
             <div
               onClick={() => openLightbox(4)}
+              style={{ position: "relative" }}
               className="h-[170px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
               role="button"
               tabIndex={0}
@@ -292,6 +295,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 src="/images/quality/gandola-rolas-descarga.jpg"
                 alt="Rolas de Pino Caribe en plataforma de gandola para descarga"
                 fill
+                priority
                 sizes="(max-width: 768px) 100vw, 30vw"
                 className="object-cover object-center group-hover:scale-105 transition duration-700"
               />

@@ -13,7 +13,10 @@ export function AboutBanner({ onOpenQuoteModal }: AboutBannerProps) {
   return (
     <section id="nosotros" className="px-4 sm:px-8 lg:px-14 pb-8 bg-transparent">
       <div className="max-w-7xl mx-auto">
-        <div className="relative rounded-2xl overflow-hidden min-h-[480px] sm:min-h-[540px] flex flex-col items-center justify-center text-center px-6 py-16 sm:py-20 bg-[#0A1F13] shadow-lg">
+        <div
+          style={{ position: "relative" }}
+          className="relative rounded-2xl overflow-hidden min-h-[480px] sm:min-h-[540px] flex flex-col items-center justify-center text-center px-6 py-16 sm:py-20 bg-[#0A1F13] shadow-lg"
+        >
           {/* Background Image (Clean Plywood - No Stencils) */}
           <Image
             src="/images/plant/planta-yaracuy-limpia.jpg"

@@ -41,7 +41,10 @@ export function SolutionsSection({ onOpenQuoteModal }: SolutionsSectionProps) {
               </div>
 
               <div className="lg:col-span-6">
-                <div className="h-40 sm:h-48 w-full rounded-xl overflow-hidden relative shadow-sm">
+                <div
+                  style={{ position: "relative" }}
+                  className="h-40 sm:h-48 w-full rounded-xl overflow-hidden relative shadow-sm"
+                >
                   <Image
                     src={item.image}
                     alt={item.title}

@@ -60,7 +60,7 @@ export function ApplicationsSection({ onOpenQuoteModal }: ApplicationsSectionPro
               onClick={() => onOpenQuoteModal(`Asesoría Técnica: ${app.title}`)}
               className="min-w-[300px] sm:min-w-[380px] flex-1 snap-start group cursor-pointer"
             >
-              <div className="h-60 rounded-xl overflow-hidden mb-4 relative">
+              <div style={{ position: "relative" }} className="h-60 rounded-xl overflow-hidden mb-4 relative">
                 <Image
                   src={app.image}
                   alt={app.title}

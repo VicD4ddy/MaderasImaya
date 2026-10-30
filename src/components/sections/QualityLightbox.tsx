@@ -205,7 +205,7 @@ export function QualityLightbox({
               <source src={currentItem.src} type="video/mp4" />
             </video>
           ) : (
-            <div className="relative w-full h-full">
+            <div style={{ position: "relative" }} className="relative w-full h-full">
               <Image
                 key={currentItem.src}
                 src={currentItem.src}

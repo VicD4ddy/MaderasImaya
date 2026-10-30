@@ -64,7 +64,7 @@ export function StoriesSection({ onOpenQuoteModal }: StoriesSectionProps) {
                 onClick={() => handleCardClick(story.id)}
                 className="min-w-[280px] sm:min-w-[330px] flex-1 snap-start bg-forest-card rounded-xl overflow-hidden relative group cursor-pointer select-none shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="h-[340px] w-full overflow-hidden relative">
+                <div style={{ position: "relative" }} className="h-[340px] w-full overflow-hidden relative">
                   <Image
                     src={story.image}
                     alt={story.company}
