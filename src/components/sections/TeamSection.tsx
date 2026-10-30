@@ -1,24 +1,13 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import { Volume2, VolumeX, ShieldCheck, Award, HeartHandshake, ArrowRight } from "lucide-react";
+import React from "react";
+import { ShieldCheck, Award, HeartHandshake, ArrowRight } from "lucide-react";
 
 interface TeamSectionProps {
   onOpenQuoteModal?: (title?: string) => void;
 }
 
 export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(true);
-
-  const toggleSound = () => {
-    if (videoRef.current) {
-      const nextMuted = !videoRef.current.muted;
-      videoRef.current.muted = nextMuted;
-      setIsMuted(nextMuted);
-    }
-  };
-
   return (
     <section
       id="nuestra-gente"
@@ -179,67 +168,24 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
             )}
           </div>
 
-          {/* Right Column: High-Craft Vertical Video Player */}
+          {/* Right Column: Seamless Living GIF Loop */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[340px] sm:max-w-[370px] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl border border-zinc-800/20 bg-forest-dark group">
-              {/* Native Video Element with faststart and poster */}
+            <div
+              style={{ position: "relative" }}
+              className="relative w-full max-w-[340px] sm:max-w-[370px] aspect-[9/16] rounded-2xl overflow-hidden shadow-[0_12px_40px_rgba(20,32,25,0.12)] border border-black/5 bg-forest-dark group select-none cursor-pointer"
+            >
+              {/* Native Continuous Silent Loop (Living GIF behavior) */}
               <video
-                ref={videoRef}
                 autoPlay
                 loop
                 muted
                 playsInline
+                disablePictureInPicture
                 poster="/images/team/trabajadores-imaya-poster.jpg"
-                className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
+                className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out pointer-events-none"
               >
                 <source src="/videos/team/trabajadores-imaya.mp4" type="video/mp4" />
-                Tu navegador no soporta reproducción de video HTML5.
               </video>
-
-              {/* Top Glassmorphic Controls Bar */}
-              <div className="absolute top-3.5 inset-x-3.5 flex items-center justify-between z-20 pointer-events-none">
-                {/* Live Plant Status Badge */}
-                <div className="bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/15 text-[11px] font-mono text-white flex items-center gap-2 shadow-lg">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="tracking-wide">EQUIPO EN PLANTA</span>
-                </div>
-
-                {/* Interactive Audio Toggle Button */}
-                <button
-                  type="button"
-                  onClick={toggleSound}
-                  className="pointer-events-auto bg-black/80 hover:bg-black/95 backdrop-blur-md px-2.5 py-1.5 rounded-lg border border-white/15 text-white transition flex items-center gap-1.5 text-xs font-mono cursor-pointer shadow-lg active:scale-95"
-                  aria-label={isMuted ? "Activar audio del video" : "Silenciar audio del video"}
-                  title={isMuted ? "Activar audio" : "Silenciar audio"}
-                >
-                  {isMuted ? (
-                    <>
-                      <VolumeX className="w-3.5 h-3.5 text-white/80" />
-                      <span className="text-[11px]">Audio</span>
-                    </>
-                  ) : (
-                    <>
-                      <Volume2 className="w-3.5 h-3.5 text-lime-pale animate-bounce" />
-                      <span className="text-[11px] text-lime-pale font-medium">Activo</span>
-                    </>
-                  )}
-                </button>
-              </div>
-
-              {/* Bottom Glassmorphic Label Overlay */}
-              <div className="absolute bottom-3.5 inset-x-3.5 z-20 pointer-events-none">
-                <div className="bg-black/80 backdrop-blur-md p-3.5 rounded-xl border border-white/15 text-white shadow-xl">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-semibold text-lime-pale tracking-wide">
-                      Operadores de Planta IMAYA
-                    </span>
-                    <span className="text-[10px] font-mono text-white/70">San Felipe</span>
-                  </div>
-                  <p className="text-[11px] text-white/85 leading-snug">
-                    Carretera Panamericana, Yaracuy — Compromiso y pasión en cada jornada.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
