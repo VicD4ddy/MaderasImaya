@@ -116,12 +116,11 @@ export function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
                 poster="/images/capabilities/seleccion-forestal.jpg"
               >
                 <source src="/videos/troncos.mp4" type="video/mp4" />
-                <source src="/videos/troncos.mov" type="video/quicktime" />
-                {/* Fallback to GIF image */}
+                {/* Fallback image */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/hero/troncos.gif"
-                  alt="Rolas de Pino Caribe en movimiento"
+                  src="/images/capabilities/seleccion-forestal.jpg"
+                  alt="Rolas de Pino Caribe en patio San Felipe"
                   className="w-full h-full object-cover"
                 />
               </video>
