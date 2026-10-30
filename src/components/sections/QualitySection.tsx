@@ -20,14 +20,12 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
     setActiveLightboxIndex(null);
   };
 
-  const textStrokeStyle: React.CSSProperties = {
-    WebkitTextStroke: "1.5px black",
-    paintOrder: "stroke fill",
-    textShadow: "0 1px 4px rgba(0,0,0,1), 0 2px 8px rgba(0,0,0,0.9)",
+  const textTitleStyle: React.CSSProperties = {
+    textShadow: "0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,1)",
   };
 
   const subtextShadowStyle: React.CSSProperties = {
-    textShadow: "0 1px 3px rgba(0,0,0,1)",
+    textShadow: "0 1px 4px rgba(0,0,0,0.95)",
   };
 
   return (
@@ -112,24 +110,24 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
               >
                 <source src="/videos/quality/torno-rotatorio.mp4" type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/30 flex flex-col justify-between p-4 sm:p-5 z-10">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 z-10">
                 <div className="flex items-center justify-between">
-                  <span className="text-white text-xs font-mono uppercase tracking-wider bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/15 flex items-center gap-2 shadow-lg">
+                  <span className="text-white text-xs font-mono uppercase tracking-wider bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2 shadow-sm group-hover:bg-black/60 transition-colors">
                     <span className="w-2 h-2 rounded-full bg-lime-pale animate-pulse" />
                     Lotes Calibrados • San Felipe, Yaracuy
                   </span>
-                  <span className="text-[11px] font-mono text-lime-pale bg-black/80 backdrop-blur-md px-2.5 py-1.5 rounded-lg border border-white/15 flex items-center gap-1.5 shadow-lg group-hover:bg-lime-pale group-hover:text-forest-dark transition">
+                  <span className="text-[11px] font-mono text-lime-pale bg-black/40 backdrop-blur-md px-2.5 py-1.5 rounded-lg border border-white/10 flex items-center gap-1.5 shadow-sm group-hover:bg-lime-pale group-hover:text-forest-dark group-hover:border-lime-pale transition-all">
                     <Expand className="w-3.5 h-3.5" /> Ver en Galería ↗
                   </span>
                 </div>
-                <div className="bg-black/80 backdrop-blur-md p-3 sm:p-3.5 rounded-xl border border-white/15 shadow-xl max-w-xl">
+                <div className="max-w-xl pb-1">
                   <h3
                     className="text-base sm:text-lg font-bold text-white uppercase tracking-wide leading-tight"
-                    style={textStrokeStyle}
+                    style={textTitleStyle}
                   >
                     Desenrollado Continuo de Rolas
                   </h3>
-                  <p className="text-xs text-white/95 mt-1" style={subtextShadowStyle}>
+                  <p className="text-xs text-white/90 mt-1" style={subtextShadowStyle}>
                     Torno rotatorio industrial • Tolerancia micrométrica ±0.2mm
                   </p>
                 </div>
@@ -160,23 +158,23 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
               >
                 <source src="/videos/quality/gandola-transporte.mp4" type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-between p-3.5 z-10">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/15 shadow-md">
+                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
                     <Truck className="w-3.5 h-3.5 text-lime-pale" /> Logística
                   </span>
-                  <span className="bg-black/80 backdrop-blur-md p-1.5 rounded-lg border border-white/15 shadow-md group-hover:bg-lime-pale transition">
-                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition" />
+                  <span className="bg-black/40 backdrop-blur-md p-1.5 rounded-lg border border-white/10 shadow-sm group-hover:bg-lime-pale group-hover:border-lime-pale transition-all">
+                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition-colors" />
                   </span>
                 </div>
-                <div className="bg-black/80 backdrop-blur-md p-2.5 rounded-lg border border-white/15 shadow-xl">
+                <div className="max-w-xl pb-0.5">
                   <h4
                     className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
-                    style={textStrokeStyle}
+                    style={textTitleStyle}
                   >
                     IMPORTACIÓN Y DISTRIBUCIÓN
                   </h4>
-                  <p className="text-[11px] text-white/95 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
+                  <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
                     Despacho seguro en paletas flejadas y gandolas
                   </p>
                 </div>
@@ -207,23 +205,23 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
               >
                 <source src="/videos/quality/apilado-chapas.mp4" type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-between p-3.5 z-10">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/15 shadow-md">
+                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
                     <Layers className="w-3.5 h-3.5 text-lime-pale" /> Especialidad
                   </span>
-                  <span className="bg-black/80 backdrop-blur-md p-1.5 rounded-lg border border-white/15 shadow-md group-hover:bg-lime-pale transition">
-                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition" />
+                  <span className="bg-black/40 backdrop-blur-md p-1.5 rounded-lg border border-white/10 shadow-sm group-hover:bg-lime-pale group-hover:border-lime-pale transition-all">
+                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition-colors" />
                   </span>
                 </div>
-                <div className="bg-black/80 backdrop-blur-md p-2.5 rounded-lg border border-white/15 shadow-xl">
+                <div className="max-w-xl pb-0.5">
                   <h4
                     className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
-                    style={textStrokeStyle}
+                    style={textTitleStyle}
                   >
                     CONTRACHAPADO DE PINO CARIBE
                   </h4>
-                  <p className="text-[11px] text-white/95 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
+                  <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
                     Chapas cruzadas a 90° prensadas a alta temperatura
                   </p>
                 </div>
@@ -253,23 +251,23 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 sizes="(max-width: 768px) 100vw, 30vw"
                 className="object-cover object-center group-hover:scale-105 transition duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-between p-3.5 z-10">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/15 shadow-md">
+                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
                     <Ruler className="w-3.5 h-3.5 text-lime-pale" /> Versatilidad
                   </span>
-                  <span className="bg-black/80 backdrop-blur-md p-1.5 rounded-lg border border-white/15 shadow-md group-hover:bg-lime-pale transition">
-                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition" />
+                  <span className="bg-black/40 backdrop-blur-md p-1.5 rounded-lg border border-white/10 shadow-sm group-hover:bg-lime-pale group-hover:border-lime-pale transition-all">
+                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition-colors" />
                   </span>
                 </div>
-                <div className="bg-black/80 backdrop-blur-md p-2.5 rounded-lg border border-white/15 shadow-xl">
+                <div className="max-w-xl pb-0.5">
                   <h4
                     className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
-                    style={textStrokeStyle}
+                    style={textTitleStyle}
                   >
                     CALIBRACIÓN Y CORTE PRECISO
                   </h4>
-                  <p className="text-[11px] text-white/95 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
+                  <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
                     Espesores desde 6 mm hasta 18 mm sin alabeo
                   </p>
                 </div>
@@ -299,23 +297,23 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 sizes="(max-width: 768px) 100vw, 30vw"
                 className="object-cover object-center group-hover:scale-105 transition duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-between p-3.5 z-10">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/15 shadow-md">
+                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
                     <Trees className="w-3.5 h-3.5 text-lime-pale" /> Materia Prima
                   </span>
-                  <span className="bg-black/80 backdrop-blur-md p-1.5 rounded-lg border border-white/15 shadow-md group-hover:bg-lime-pale transition">
-                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition" />
+                  <span className="bg-black/40 backdrop-blur-md p-1.5 rounded-lg border border-white/10 shadow-sm group-hover:bg-lime-pale group-hover:border-lime-pale transition-all">
+                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition-colors" />
                   </span>
                 </div>
-                <div className="bg-black/80 backdrop-blur-md p-2.5 rounded-lg border border-white/15 shadow-xl">
+                <div className="max-w-xl pb-0.5">
                   <h4
                     className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
-                    style={textStrokeStyle}
+                    style={textTitleStyle}
                   >
                     ROLAS DE PINO CARIBE 100%
                   </h4>
-                  <p className="text-[11px] text-white/95 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
+                  <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
                     Selección directa en patio San Felipe, Yaracuy
                   </p>
                 </div>
