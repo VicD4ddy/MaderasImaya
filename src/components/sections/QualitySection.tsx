@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { assetPath } from "@/lib/utils";
 import { ArrowRight, Layers, Truck, Ruler, Trees, Expand } from "lucide-react";
 import { QualityLightbox } from "./QualityLightbox";
 
@@ -68,7 +69,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
               </blockquote>
               <div className="flex items-center gap-3">
                 <Image
-                  src="/images/testimonials/carlos-mendez.jpg"
+                  src={assetPath("/images/testimonials/carlos-mendez.jpg")}
                   alt="Ing. Carlos Méndez"
                   width={40}
                   height={40}
@@ -105,10 +106,10 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 loop
                 muted
                 playsInline
-                poster="/images/quality/torno-rotatorio-poster.jpg"
+                poster={assetPath("/images/quality/torno-rotatorio-poster.jpg")}
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
               >
-                <source src="/videos/quality/torno-rotatorio.mp4" type="video/mp4" />
+                <source src={assetPath("/videos/quality/torno-rotatorio.mp4")} type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 z-10">
                 <div className="flex items-center justify-between">
@@ -153,10 +154,10 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 loop
                 muted
                 playsInline
-                poster="/images/quality/gandola-transporte-poster.jpg"
+                poster={assetPath("/images/quality/gandola-transporte-poster.jpg")}
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
               >
-                <source src="/videos/quality/gandola-transporte.mp4" type="video/mp4" />
+                <source src={assetPath("/videos/quality/gandola-transporte.mp4")} type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
                 <div className="flex items-center justify-between">
@@ -200,10 +201,10 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 loop
                 muted
                 playsInline
-                poster="/images/quality/apilado-chapas-poster.jpg"
+                poster={assetPath("/images/quality/apilado-chapas-poster.jpg")}
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
               >
-                <source src="/videos/quality/apilado-chapas.mp4" type="video/mp4" />
+                <source src={assetPath("/videos/quality/apilado-chapas.mp4")} type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
                 <div className="flex items-center justify-between">
@@ -244,7 +245,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
               aria-label="Abrir foto de Patio Industrial en galería"
             >
               <Image
-                src="/images/quality/patio-industrial-yaracuy.jpg"
+                src={assetPath("/images/quality/patio-industrial-yaracuy.jpg")}
                 alt="Patio industrial y cargador frontal en planta IMAYA Yaracuy"
                 fill
                 priority
@@ -290,7 +291,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
               aria-label="Abrir foto de Rolas de Pino Caribe en galería"
             >
               <Image
-                src="/images/quality/gandola-rolas-descarga.jpg"
+                src={assetPath("/images/quality/gandola-rolas-descarga.jpg")}
                 alt="Rolas de Pino Caribe en plataforma de gandola para descarga"
                 fill
                 priority

@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { companyInfo } from "@/data/company";
+import { assetPath } from "@/lib/utils";
 import { InstagramIcon as Instagram } from "@/components/icons/InstagramIcon";
 
 interface AboutBannerProps {
@@ -19,7 +20,7 @@ export function AboutBanner({ onOpenQuoteModal }: AboutBannerProps) {
         >
           {/* Background Image (Clean Plywood - No Stencils) */}
           <Image
-            src="/images/plant/planta-yaracuy-limpia.jpg"
+            src={assetPath("/images/plant/planta-yaracuy-limpia.jpg")}
             alt="Planta Maderas IMAYA en San Felipe, Yaracuy"
             fill
             sizes="100vw"

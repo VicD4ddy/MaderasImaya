@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
+import { assetPath } from "@/lib/utils";
 import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 
 export interface QualityItem {
@@ -21,8 +22,8 @@ export const QUALITY_ITEMS: QualityItem[] = [
   {
     id: "torno-rotatorio",
     type: "video",
-    src: "/videos/quality/torno-rotatorio.mp4",
-    poster: "/images/quality/torno-rotatorio-poster.jpg",
+    src: assetPath("/videos/quality/torno-rotatorio.mp4"),
+    poster: assetPath("/images/quality/torno-rotatorio-poster.jpg"),
     badge: "Torno Rotatorio Industrial",
     title: "Desenrollado Continuo de Rolas",
     subtitle: "Corte Tangencial a Alta Velocidad",
@@ -33,8 +34,8 @@ export const QUALITY_ITEMS: QualityItem[] = [
   {
     id: "gandola-transporte",
     type: "video",
-    src: "/videos/quality/gandola-transporte.mp4",
-    poster: "/images/quality/gandola-transporte-poster.jpg",
+    src: assetPath("/videos/quality/gandola-transporte.mp4"),
+    poster: assetPath("/images/quality/gandola-transporte-poster.jpg"),
     badge: "Logística Pesada",
     title: "Recepción de Rolas en Planta",
     subtitle: "Gandola GMC Brigadier",
@@ -45,8 +46,8 @@ export const QUALITY_ITEMS: QualityItem[] = [
   {
     id: "apilado-chapas",
     type: "video",
-    src: "/videos/quality/apilado-chapas.mp4",
-    poster: "/images/quality/apilado-chapas-poster.jpg",
+    src: assetPath("/videos/quality/apilado-chapas.mp4"),
+    poster: assetPath("/images/quality/apilado-chapas-poster.jpg"),
     badge: "Mesa de Corte y Clasificación",
     title: "Apilado Mecánico de Láminas",
     subtitle: "Guillotina y Separación Estructural",
@@ -57,7 +58,7 @@ export const QUALITY_ITEMS: QualityItem[] = [
   {
     id: "patio-industrial",
     type: "image",
-    src: "/images/quality/patio-industrial-yaracuy.jpg",
+    src: assetPath("/images/quality/patio-industrial-yaracuy.jpg"),
     badge: "Patio de Acopio",
     title: "Clasificación y Carga Pesada",
     subtitle: "Tractor Cargador Frontal",
@@ -68,7 +69,7 @@ export const QUALITY_ITEMS: QualityItem[] = [
   {
     id: "gandola-descarga",
     type: "image",
-    src: "/images/quality/gandola-rolas-descarga.jpg",
+    src: assetPath("/images/quality/gandola-rolas-descarga.jpg"),
     badge: "Materia Prima 100%",
     title: "Rolas de Pino Caribe Seleccionadas",
     subtitle: "Plataforma de Descarga",

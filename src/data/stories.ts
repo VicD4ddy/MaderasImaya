@@ -1,4 +1,5 @@
 import { StoryItem } from "@/types";
+import { assetPath } from "@/lib/utils";
 
 export const storiesData: StoryItem[] = [
   {
@@ -6,7 +7,7 @@ export const storiesData: StoryItem[] = [
     company: "DESARROLLOS DEL CENTRO",
     location: "Valencia, Carabobo",
     sector: "OBRA CIVIL",
-    image: "/images/testimonials/desarrollos-centro.jpg",
+    image: assetPath("/images/testimonials/desarrollos-centro.jpg"),
     quote:
       "\"Trabajar con Maderas IMAYA nos permitió estandarizar todos nuestros tableros de encofrado de 18mm con una firmeza extraordinaria y entregas puntuales directo en obra.\"",
     resultLabel: "RESULTADO :",
@@ -17,7 +18,7 @@ export const storiesData: StoryItem[] = [
     company: "GRUPO MADERERO LARA",
     location: "Barquisimeto, Lara",
     sector: "CARPINTERÍA",
-    image: "/images/testimonials/maderero-lara.jpg",
+    image: assetPath("/images/testimonials/maderero-lara.jpg"),
     quote:
       "\"El contraenchapado de Pino Caribe de IMAYA no presenta vacíos internos al cortar. Nuestros carpinteros ahorran tiempo en lijado y logran muebles de primera.\"",
     resultLabel: "RESULTADO :",
@@ -28,7 +29,7 @@ export const storiesData: StoryItem[] = [
     company: "FERRE-SUMINISTROS C.A.",
     location: "Caracas, Distrito Capital",
     sector: "MAYORISTA",
-    image: "/images/testimonials/ferre-suministros.jpg",
+    image: assetPath("/images/testimonials/ferre-suministros.jpg"),
     quote:
       "\"La cercanía de su planta en la Carretera Panamericana en Yaracuy nos garantiza reposición de inventario rápida y paquetes perfectamente flejados.\"",
     resultLabel: "RESULTADO :",
@@ -39,7 +40,7 @@ export const storiesData: StoryItem[] = [
     company: "ESTUDIO ARQ & MADERA",
     location: "San Felipe, Yaracuy",
     sector: "DISEÑO",
-    image: "/images/testimonials/estudio-arq.jpg",
+    image: assetPath("/images/testimonials/estudio-arq.jpg"),
     quote:
       "\"La calidez visual de la veta del Pino Caribe de IMAYA nos permitió diseñar revestimientos acústicos y mobiliario corporativo con sello venezolano.\"",
     resultLabel: "RESULTADO :",

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Navbar } from "@/components/layout/Navbar";
+import { assetPath } from "@/lib/utils";
 import {
   ArrowDownRight,
   Building2,
@@ -36,7 +37,7 @@ export function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
           loop
           muted
           playsInline
-          poster="/images/hero/bosque-yaracuy.jpg"
+          poster={assetPath("/images/hero/bosque-yaracuy.jpg")}
           className="w-full h-full object-cover object-center scale-105 transition-transform duration-700 ease-out"
         >
           <source
@@ -52,7 +53,7 @@ export function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
         <div
           className="absolute inset-0 bg-cover bg-center -z-10"
           style={{
-            backgroundImage: `url('/images/hero/bosque-yaracuy.jpg')`,
+            backgroundImage: `url('${assetPath("/images/hero/bosque-yaracuy.jpg")}')`,
           }}
         />
       </div>
@@ -113,13 +114,13 @@ export function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
                 muted
                 playsInline
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                poster="/images/capabilities/seleccion-forestal.jpg"
+                poster={assetPath("/images/capabilities/seleccion-forestal.jpg")}
               >
-                <source src="/videos/troncos.mp4" type="video/mp4" />
+                <source src={assetPath("/videos/troncos.mp4")} type="video/mp4" />
                 {/* Fallback image */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/capabilities/seleccion-forestal.jpg"
+                  src={assetPath("/images/capabilities/seleccion-forestal.jpg")}
                   alt="Rolas de Pino Caribe en patio San Felipe"
                   className="w-full h-full object-cover"
                 />

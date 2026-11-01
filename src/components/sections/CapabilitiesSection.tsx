@@ -2,36 +2,37 @@
 
 import React, { useRef, useState } from "react";
 import Image from "next/image";
+import { assetPath } from "@/lib/utils";
 import { ChevronLeft, ChevronRight, X, Maximize2 } from "lucide-react";
 
 const galleryImages = [
   {
     id: "proceso",
-    src: "/images/gallery/proceso-calidad.jpg",
+    src: assetPath("/images/gallery/proceso-calidad.jpg"),
     title: "Detrás de cada pieza hay un Proceso",
     subtitle: "Compromiso con la Calidad y Equipo Humano",
   },
   {
     id: "materia-prima",
-    src: "/images/gallery/materia-prima.png",
+    src: assetPath("/images/gallery/materia-prima.png"),
     title: "Materia Prima",
     subtitle: "Pino Caribe Seleccionado de Primera",
   },
   {
     id: "capas-prensado",
-    src: "/images/gallery/capas-prensado.png",
+    src: assetPath("/images/gallery/capas-prensado.png"),
     title: "Capas y Prensado",
     subtitle: "Prensado Térmico y Resina de Alta Adherencia",
   },
   {
     id: "escuadrado-lijado",
-    src: "/images/gallery/escuadrado-lijado.png",
+    src: assetPath("/images/gallery/escuadrado-lijado.png"),
     title: "Escuadrado y Lijado",
     subtitle: "Corte Milimétrico y Acabado Listo para Usar",
   },
   {
     id: "producto-terminado",
-    src: "/images/gallery/producto-terminado.png",
+    src: assetPath("/images/gallery/producto-terminado.png"),
     title: "Producto Terminado",
     subtitle: "Madera Contrachapada Confiable y Versátil",
   },

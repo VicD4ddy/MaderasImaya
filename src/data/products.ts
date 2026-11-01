@@ -1,4 +1,5 @@
 import { ProductItem, CapabilityItem } from "@/types";
+import { assetPath } from "@/lib/utils";
 
 export const productsData: ProductItem[] = [
   {
@@ -8,7 +9,7 @@ export const productsData: ProductItem[] = [
     calibers: "6mm • 9mm • 12mm • 15mm • 18mm",
     description:
       "Láminas fabricadas con chapas seleccionadas de Pino Caribe, prensadas al calor para ofrecer firmeza superior, estabilidad y durabilidad comprobada.",
-    image: "/images/products/contraenchapado-pino.jpg",
+    image: assetPath("/images/products/contraenchapado-pino.jpg"),
     badge: "Tableros Multicapa",
     quoteTitle: "Cotizar Contraenchapado de Pino Caribe",
   },
@@ -19,7 +20,7 @@ export const productsData: ProductItem[] = [
     calibers: "15mm / 18mm",
     description:
       "Tableros de alta densidad pensados para soportar el empuje del concreto en obra civil, losas, columnas, techos y cerramientos perimetrales.",
-    image: "/images/products/encofrado-construccion.jpg",
+    image: assetPath("/images/products/encofrado-construccion.jpg"),
     badge: "Alta Firmeza en Obra",
     quoteTitle: "Cotizar Madera para Construcción y Encofrado",
   },
@@ -30,7 +31,7 @@ export const productsData: ProductItem[] = [
     calibers: "Cara A/B",
     description:
       "Superficies uniformes con la veta cálida del Pino Caribe, listas para corte preciso, entintado, barnizado o laminado en mobiliario e interiorismo.",
-    image: "/images/products/carpinteria-taller.jpg",
+    image: assetPath("/images/products/carpinteria-taller.jpg"),
     badge: "Corte Limpio Sin Vacíos",
     quoteTitle: "Cotizar Línea de Carpintería y Mueblería",
   },
@@ -41,7 +42,7 @@ export const productsData: ProductItem[] = [
     calibers: "Yaracuy",
     description:
       "Abastecemos distribuidores, ferreterías, aserraderos y contratistas en toda Venezuela desde nuestra planta en la Carretera Panamericana, San Felipe.",
-    image: "/images/products/distribucion-mayorista.jpg",
+    image: assetPath("/images/products/distribucion-mayorista.jpg"),
     badge: "Suministro por Paleta o Gandola",
     quoteTitle: "Cotizar Importación y Distribución al Mayor",
   },

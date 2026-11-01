@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { assetPath } from "@/lib/utils";
 import { ShieldCheck, Award, HeartHandshake, ArrowRight } from "lucide-react";
 
 interface TeamSectionProps {
@@ -181,10 +182,10 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
                 muted
                 playsInline
                 disablePictureInPicture
-                poster="/images/team/trabajadores-imaya-poster.jpg"
+                poster={assetPath("/images/team/trabajadores-imaya-poster.jpg")}
                 className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out pointer-events-none"
               >
-                <source src="/videos/team/trabajadores-imaya.mp4" type="video/mp4" />
+                <source src={assetPath("/videos/team/trabajadores-imaya.mp4")} type="video/mp4" />
               </video>
             </div>
           </div>
