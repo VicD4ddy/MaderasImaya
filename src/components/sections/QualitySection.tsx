@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { assetPath } from "@/lib/utils";
-import { ArrowRight, Layers, Truck, Ruler, Trees, Expand } from "lucide-react";
+import { ArrowRight, Layers, Truck, Ruler, Trees, Expand, Flame, Scissors, Boxes } from "lucide-react";
 import { QualityLightbox } from "./QualityLightbox";
 
 interface QualitySectionProps {
@@ -33,13 +33,13 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
     <section id="calidad" className="px-6 sm:px-10 lg:px-14 py-20 lg:py-28 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-stretch">
-          {/* Left Column: Heading + Narrative */}
-          <div className="lg:col-span-5 flex flex-col justify-center">
-            <div>
+          {/* Left Column: Heading + Narrative + Featured Prensa Video Card */}
+          <div className="lg:col-span-5 flex flex-col justify-between">
+            <div className="mb-6 lg:mb-8">
               <span className="font-mono text-xs text-imaya-green font-medium tracking-wider block mb-3">
                 [ Calidad y Firmeza ]
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-normal tracking-tight leading-[1.15] text-forest-dark mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-normal tracking-tight leading-[1.15] text-forest-dark mb-5">
                 Madera Calibrada para{" "}
                 <br />
                 Exigencias Reales
@@ -55,20 +55,69 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 Solicitar Catálogo de Productos <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
-          </div>
 
-          {/* Right Column: Bento Grid (Protected Frosted-Glass Pills + Heavy Black Stroke) */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* Slot 1: Top Full-Span Video (Torno Rotatorio Industrial) */}
+            {/* Left Slot: Video Prensa Térmica Hidráulica (Index 0 in Lightbox) */}
             <div
               onClick={() => openLightbox(0)}
-              className="sm:col-span-2 h-[290px] sm:h-[336px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+              className="h-[280px] sm:h-[320px] lg:h-[480px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
                   openLightbox(0);
+                }
+              }}
+              aria-label="Abrir video de Prensa Hidráulica en galería"
+            >
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster={assetPath("/images/quality/prensa-hidraulica-poster.jpg")}
+                style={{ filter: "brightness(0.75) contrast(1.15) saturate(1.05)" }}
+                className="w-full h-full object-cover object-center brightness-[0.75] contrast-[1.15] saturate-[1.05] group-hover:scale-105 transition duration-700"
+              >
+                <source src={assetPath("/videos/quality/prensa-hidraulica.mp4")} type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 z-10">
+                <div className="flex items-center justify-between">
+                  <span className="text-white text-xs font-mono uppercase tracking-wider bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2 shadow-sm group-hover:bg-black/60 transition-colors">
+                    <Flame className="w-3.5 h-3.5 text-lime-pale" />
+                    Prensado Térmico Continuo
+                  </span>
+                  <span className="text-[11px] font-mono text-lime-pale bg-black/40 backdrop-blur-md px-2.5 py-1.5 rounded-lg border border-white/10 flex items-center gap-1.5 shadow-sm group-hover:bg-lime-pale group-hover:text-forest-dark group-hover:border-lime-pale transition-all">
+                    <Expand className="w-3.5 h-3.5" /> Ver en Galería ↗
+                  </span>
+                </div>
+                <div className="max-w-xl pb-1">
+                  <h3
+                    className="text-base sm:text-lg font-bold text-white uppercase tracking-wide leading-tight"
+                    style={textTitleStyle}
+                  >
+                    Prensa Hidráulica Multicapa
+                  </h3>
+                  <p className="text-xs text-white/90 mt-1" style={subtextShadowStyle}>
+                    Curado de resinas fenólicas a alta presión y temperatura uniforme
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Bento Grid (Protected Frosted-Glass Pills + Heavy Black Stroke) */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Slot 1: Top Full-Span Video (Torno Rotatorio Industrial) */}
+            <div
+              onClick={() => openLightbox(1)}
+              className="sm:col-span-2 h-[290px] sm:h-[336px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  openLightbox(1);
                 }
               }}
               aria-label="Abrir video de Torno Rotatorio en galería"
@@ -110,14 +159,14 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
 
             {/* Slot 2: Video Gandola GMC (Logística & Despacho) */}
             <div
-              onClick={() => openLightbox(1)}
+              onClick={() => openLightbox(2)}
               className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
-                  openLightbox(1);
+                  openLightbox(2);
                 }
               }}
               aria-label="Abrir video de Logística y Despacho en galería"
@@ -157,14 +206,14 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
 
             {/* Slot 3: Video Apilado de Chapas (Especialidad Contrachapado) */}
             <div
-              onClick={() => openLightbox(2)}
+              onClick={() => openLightbox(3)}
               className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
-                  openLightbox(2);
+                  openLightbox(3);
                 }
               }}
               aria-label="Abrir video de Especialidad en Contrachapado en galería"
@@ -202,56 +251,9 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
               </div>
             </div>
 
-            {/* Slot 4: Foto Patio Industrial y Cargador (Versatilidad & Calibración) */}
-            <div
-              onClick={() => openLightbox(3)}
-              style={{ position: "relative" }}
-              className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  openLightbox(3);
-                }
-              }}
-              aria-label="Abrir foto de Patio Industrial en galería"
-            >
-              <Image
-                src={assetPath("/images/quality/patio-industrial-yaracuy.jpg")}
-                alt="Patio industrial y cargador frontal en planta IMAYA Yaracuy"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 30vw"
-                className="object-cover object-center group-hover:scale-105 transition duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
-                    <Ruler className="w-3.5 h-3.5 text-lime-pale" /> Versatilidad
-                  </span>
-                  <span className="bg-black/40 backdrop-blur-md p-1.5 rounded-lg border border-white/10 shadow-sm group-hover:bg-lime-pale group-hover:border-lime-pale transition-all">
-                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition-colors" />
-                  </span>
-                </div>
-                <div className="max-w-xl pb-0.5">
-                  <h3
-                    className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
-                    style={textTitleStyle}
-                  >
-                    CALIBRACIÓN Y CORTE PRECISO
-                  </h3>
-                  <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
-                    Espesores desde 6 mm hasta 18 mm sin alabeo
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Slot 5: Foto Gandola de Descarga (Rolas de Pino Caribe 100%) */}
+            {/* Slot 4: Video Guillotina Industrial (Corte y Dimensionado) */}
             <div
               onClick={() => openLightbox(4)}
-              style={{ position: "relative" }}
               className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
               role="button"
               tabIndex={0}
@@ -261,20 +263,23 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                   openLightbox(4);
                 }
               }}
-              aria-label="Abrir foto de Rolas de Pino Caribe en galería"
+              aria-label="Abrir video de Guillotina Industrial en galería"
             >
-              <Image
-                src={assetPath("/images/quality/gandola-rolas-descarga.jpg")}
-                alt="Rolas de Pino Caribe en plataforma de gandola para descarga"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 30vw"
-                className="object-cover object-center group-hover:scale-105 transition duration-700"
-              />
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster={assetPath("/images/quality/guillotina-dimensionado-poster.jpg")}
+                style={{ filter: "brightness(0.75) contrast(1.15) saturate(1.05)" }}
+                className="w-full h-full object-cover object-center brightness-[0.75] contrast-[1.15] saturate-[1.05] group-hover:scale-105 transition duration-700"
+              >
+                <source src={assetPath("/videos/quality/guillotina-dimensionado.mp4")} type="video/mp4" />
+              </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
-                    <Trees className="w-3.5 h-3.5 text-lime-pale" /> Materia Prima
+                    <Scissors className="w-3.5 h-3.5 text-lime-pale" /> Guillotina
                   </span>
                   <span className="bg-black/40 backdrop-blur-md p-1.5 rounded-lg border border-white/10 shadow-sm group-hover:bg-lime-pale group-hover:border-lime-pale transition-all">
                     <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition-colors" />
@@ -285,10 +290,58 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                     className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
                     style={textTitleStyle}
                   >
-                    ROLAS DE PINO CARIBE 100%
+                    CORTE Y GUILLOTINADO
                   </h3>
                   <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
-                    Selección directa en patio San Felipe, Yaracuy
+                    Escuadrado milimétrico y clasificación de chapas
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Slot 5: Video Montacargas y Despacho de Tableros */}
+            <div
+              onClick={() => openLightbox(5)}
+              className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  openLightbox(5);
+                }
+              }}
+              aria-label="Abrir video de Montacargas y Paletizado en galería"
+            >
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster={assetPath("/images/quality/montacargas-despacho-poster.jpg")}
+                style={{ filter: "brightness(0.75) contrast(1.15) saturate(1.05)" }}
+                className="w-full h-full object-cover object-center brightness-[0.75] contrast-[1.15] saturate-[1.05] group-hover:scale-105 transition duration-700"
+              >
+                <source src={assetPath("/videos/quality/montacargas-despacho.mp4")} type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
+                    <Boxes className="w-3.5 h-3.5 text-lime-pale" /> Paletizado
+                  </span>
+                  <span className="bg-black/40 backdrop-blur-md p-1.5 rounded-lg border border-white/10 shadow-sm group-hover:bg-lime-pale group-hover:border-lime-pale transition-all">
+                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition-colors" />
+                  </span>
+                </div>
+                <div className="max-w-xl pb-0.5">
+                  <h3
+                    className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
+                    style={textTitleStyle}
+                  >
+                    MONTACARGAS Y DESPACHO
+                  </h3>
+                  <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
+                    Paletas flejadas y carga directa en planta
                   </p>
                 </div>
               </div>

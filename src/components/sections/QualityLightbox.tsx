@@ -20,6 +20,18 @@ export interface QualityItem {
 
 export const QUALITY_ITEMS: QualityItem[] = [
   {
+    id: "prensa-hidraulica",
+    type: "video",
+    src: assetPath("/videos/quality/prensa-hidraulica.mp4"),
+    poster: assetPath("/images/quality/prensa-hidraulica-poster.jpg"),
+    badge: "Prensado Térmico Continuo",
+    title: "Prensa Térmica Hidráulica Multicapa",
+    subtitle: "Curado de Resinas Fenólicas a Alta Presión",
+    description:
+      "Platos calefactados de gran tonelaje aplican presión y temperatura uniforme sobre los paquetes de chapas cruzadas, consolidando la unión estructural y garantizando tableros calibrados sin alabeo.",
+    specs: "Presión Hidráulica Industrial • Curado Térmico",
+  },
+  {
     id: "torno-rotatorio",
     type: "video",
     src: assetPath("/videos/quality/torno-rotatorio.mp4"),
@@ -54,6 +66,30 @@ export const QUALITY_ITEMS: QualityItem[] = [
     description:
       "Las chapas recién desenrolladas pasan por la guillotina automática y se apilan ordenadamente para su clasificación según densidad y preparación previa al prensado en caliente.",
     specs: "Láminas Calibradas • Chapa de Pino",
+  },
+  {
+    id: "guillotina-dimensionado",
+    type: "video",
+    src: assetPath("/videos/quality/guillotina-dimensionado.mp4"),
+    poster: assetPath("/images/quality/guillotina-dimensionado-poster.jpg"),
+    badge: "Corte y Guillotinado",
+    title: "Dimensionado y Escuadrado de Chapas",
+    subtitle: "Corte Preciso con Cuchilla Industrial",
+    description:
+      "Operador calificado ajusta y escuadra las láminas de pino retirando bordes irregulares para obtener formatos limpios y exactos listos para el encolado y prensado.",
+    specs: "Escuadrado Milimétrico • Control Operativo",
+  },
+  {
+    id: "montacargas-despacho",
+    type: "video",
+    src: assetPath("/videos/quality/montacargas-despacho.mp4"),
+    poster: assetPath("/images/quality/montacargas-despacho-poster.jpg"),
+    badge: "Despacho y Paletizado",
+    title: "Montacargas y Paletizado en Planta",
+    subtitle: "Carga Directa de Tableros Calibrados",
+    description:
+      "Montacargas industrial de alto tonelaje moviliza paletas flejadas de madera contrachapada recién terminada, listas para el embarque y distribución nacional a obra civil.",
+    specs: "Paletas Flejadas • Despacho Inmediato",
   },
   {
     id: "patio-industrial",
