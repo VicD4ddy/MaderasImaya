@@ -3,11 +3,9 @@
 import React, { useState } from "react";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { QualitySection } from "@/components/sections/QualitySection";
-import { SpecsSection } from "@/components/sections/SpecsSection";
 import { CapabilitiesSection } from "@/components/sections/CapabilitiesSection";
 import { TeamSection } from "@/components/sections/TeamSection";
 import { MetricsSection } from "@/components/sections/MetricsSection";
-import { FaqSection } from "@/components/sections/FaqSection";
 import { AboutBanner } from "@/components/sections/AboutBanner";
 import { Footer } from "@/components/layout/Footer";
 import { QuoteModal } from "@/components/ui/QuoteModal";
@@ -37,9 +35,6 @@ export default function Home() {
         {/* Quality & Efficiency Bento Grid */}
         <QualitySection onOpenQuoteModal={handleOpenQuoteModal} />
 
-        {/* Technical Specifications & Plywood Thickness Table */}
-        <SpecsSection onOpenQuoteModal={handleOpenQuoteModal} />
-
         {/* Key Capabilities Industrial Gallery */}
         <CapabilitiesSection />
 
@@ -48,9 +43,6 @@ export default function Home() {
 
         {/* Performance & Impact Metrics Banner */}
         <MetricsSection onOpenQuoteModal={handleOpenQuoteModal} />
-
-        {/* Frequently Asked Questions (FAQ) Accordion */}
-        <FaqSection onOpenQuoteModal={handleOpenQuoteModal} />
 
         {/* Industrial Plant Yaracuy Banner */}
         <AboutBanner onOpenQuoteModal={handleOpenQuoteModal} />

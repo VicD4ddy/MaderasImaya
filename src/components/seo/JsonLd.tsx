@@ -57,44 +57,6 @@ export function JsonLd() {
           },
         },
       },
-      {
-        "@type": "FAQPage",
-        "@id": "https://maderasimaya.pages.dev/#faq",
-        mainEntity: [
-          {
-            "@type": "Question",
-            "name": "¿Cuáles son las medidas y espesores de los tableros contrachapados IMAYA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Nuestros tableros se suministran en el formato industrial estándar de 1.22 m × 2.44 m (4' × 8'), con espesores calibrados desde 9 mm hasta 18 mm, ideales para encofrado estructural y carpintería.",
-            },
-          },
-          {
-            "@type": "Question",
-            "name": "¿La madera contrachapada es apta para encofrados de concreto pesado?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sí. Gracias a la disposición de chapas cruzadas a 90° y al prensado térmico con resinas de alta adherencia, ofrece máxima resistencia a la flexión y alta reutilización en obra sin alabeo.",
-            },
-          },
-          {
-            "@type": "Question",
-            "name": "¿Realizan despachos a nivel nacional en Venezuela?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sí. Despachamos en paletas flejadas y gandolas completas directamente desde nuestra planta en San Felipe, Yaracuy, a constructoras, madereras y ferreterías en todo el territorio nacional.",
-            },
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cómo solicitar una cotización directa de planta?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Puede solicitar cotización inmediata a través del botón de contacto en nuestra web o comunicándose directamente por WhatsApp con nuestro departamento comercial al +58 424-5884248.",
-            },
-          },
-        ],
-      },
     ],
   };
 

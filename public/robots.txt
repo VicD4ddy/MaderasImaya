@@ -4,3 +4,4 @@ Disallow: /api/
 Disallow: /page/
 
 Sitemap: https://maderasimaya.pages.dev/sitemap.xml
+
