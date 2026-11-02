@@ -10,9 +10,9 @@ interface FooterProps {
 
 export function Footer({ onOpenQuoteModal }: FooterProps) {
   return (
-    <footer className="px-6 sm:px-10 lg:px-14 pt-14 pb-10 bg-white/60 backdrop-blur-sm text-forest-dark border-t border-gray-100">
+    <footer className="px-6 sm:px-10 lg:px-14 pt-14 pb-10 bg-white/40 backdrop-blur-sm text-forest-dark border-t border-forest-dark/10">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-14 border-b border-gray-100">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-14 border-b border-forest-dark/10">
           {/* Left Brand & Tagline */}
           <div className="lg:col-span-6 flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-10">
             <a href="#inicio" className="shrink-0" aria-label="Maderas IMAYA">

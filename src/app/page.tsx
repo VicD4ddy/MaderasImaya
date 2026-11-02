@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <main className="w-full min-h-screen bg-white">
+    <main className="w-full min-h-screen bg-[#D2EAD9]">
       {/* Hero Section with Integrated Transparent Top Navbar (Full-Bleed, Borderless) */}
       <HeroSection onOpenQuoteModal={handleOpenQuoteModal} />
 

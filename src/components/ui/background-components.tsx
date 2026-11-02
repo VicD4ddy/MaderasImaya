@@ -21,22 +21,21 @@ export const BackgroundGlow = ({
         }
       : variant === "green"
       ? {
-          backgroundImage: `radial-gradient(circle at center, #8FFFB0 0%, transparent 70%)`,
-          opacity: 0.65,
+          backgroundImage: `radial-gradient(circle at center, #7DEAA1 0%, transparent 70%)`,
+          opacity: 0.7,
           mixBlendMode: "multiply" as const,
         }
       : {
           backgroundImage: `
-            radial-gradient(circle at 50% 15%, rgba(143, 255, 176, 0.45) 0%, transparent 60%),
-            radial-gradient(circle at 20% 50%, rgba(255, 249, 145, 0.35) 0%, transparent 55%),
-            radial-gradient(circle at 80% 85%, rgba(143, 255, 176, 0.4) 0%, transparent 60%)
+            radial-gradient(circle at 50% 12%, rgba(20, 136, 68, 0.22) 0%, transparent 65%),
+            radial-gradient(circle at 15% 45%, rgba(228, 248, 178, 0.35) 0%, transparent 60%),
+            radial-gradient(circle at 85% 75%, rgba(20, 136, 68, 0.20) 0%, transparent 65%)
           `,
-          opacity: 0.75,
-          mixBlendMode: "multiply" as const,
+          opacity: 0.85,
         };
 
   return (
-    <div className={cn("w-full relative bg-white overflow-hidden", className)}>
+    <div className={cn("w-full relative bg-[#D2EAD9] overflow-hidden", className)}>
       {/* Soft Glow Ambient Layer */}
       <div
         className="pointer-events-none absolute inset-0 z-0"

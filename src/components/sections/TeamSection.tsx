@@ -12,7 +12,7 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
   return (
     <section
       id="nuestra-gente"
-      className="px-6 sm:px-10 lg:px-14 py-20 lg:py-28 bg-transparent border-t border-gray-100"
+      className="px-6 sm:px-10 lg:px-14 py-20 lg:py-28 bg-transparent border-t border-forest-dark/10"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
