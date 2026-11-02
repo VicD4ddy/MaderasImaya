@@ -8,7 +8,7 @@ export function JsonLd() {
         name: "INDUSTRIA MADERERA YARACUY C.A. (IMAYACA)",
         alternateName: "Maderas IMAYA",
         url: "https://maderasimaya.pages.dev/",
-        logo: "https://maderasimaya.pages.dev/images/brand/imaya-logo.png",
+        logo: "https://maderasimaya.pages.dev/images/og/imaya-og.jpg",
         image: "https://maderasimaya.pages.dev/images/og/imaya-og.jpg",
         telephone: "+58-424-5884248",
         priceRange: "$$",

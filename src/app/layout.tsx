@@ -70,14 +70,14 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/og/imaya-og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Maderas IMAYA - Tableros de Pino Caribe en Planta San Felipe, Yaracuy",
+        width: 753,
+        height: 749,
+        alt: "Maderas IMAYA - Industria Maderera Yaracuy C.A.",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Maderas IMAYA | Madera Contrachapada en Venezuela",
     description:
       "Suministro de tableros contrachapados de Pino Caribe para construcción y encofrados.",
@@ -85,7 +85,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/icon.jpg", type: "image/jpeg" },
       { url: "/favicon.ico" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.jpg", sizes: "180x180", type: "image/jpeg" },
     ],
   },
 };
