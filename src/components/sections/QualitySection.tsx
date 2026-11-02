@@ -33,8 +33,8 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
     <section id="calidad" className="px-6 sm:px-10 lg:px-14 py-20 lg:py-28 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-stretch">
-          {/* Left Column: Heading + Narrative + Testimonial */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
+          {/* Left Column: Heading + Narrative */}
+          <div className="lg:col-span-5 flex flex-col justify-center">
             <div>
               <span className="font-mono text-xs text-imaya-green font-medium tracking-wider block mb-3">
                 [ Calidad y Firmeza ]
@@ -55,33 +55,6 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
               >
                 Solicitar Catálogo de Productos <ArrowRight className="w-3.5 h-3.5" />
               </button>
-            </div>
-
-            {/* Bottom Left Testimonial Block */}
-            <div className="mt-12 lg:mt-0 pt-8 border-t border-gray-100">
-              <div className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-gray-800 mb-4">
-                <Layers className="w-4 h-4 text-imaya-green" /> CONSTRUCTORA & ENCOFRADOS DEL CENTRO
-              </div>
-              <blockquote className="text-sm sm:text-base text-gray-600 leading-relaxed mb-5 italic">
-                &ldquo;IMAYA entendió nuestros tiempos de obra desde el primer día. Su madera
-                contrachapada de Pino Caribe nos dio la firmeza estructural, el escuadrado exacto y
-                la reutilización en encofrado que ningún otro proveedor logró igualar.&rdquo;
-              </blockquote>
-              <div className="flex items-center gap-3">
-                <Image
-                  src={assetPath("/images/testimonials/carlos-mendez.jpg")}
-                  alt="Ing. Carlos Méndez"
-                  width={40}
-                  height={40}
-                  className="w-10 h-10 rounded-full object-cover ring-2 ring-lime-pale"
-                />
-                <div>
-                  <div className="text-xs font-semibold text-gray-900">Ing. Carlos Méndez</div>
-                  <div className="text-[11px] text-gray-500">
-                    Director de Operaciones, Obras Civiles
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
