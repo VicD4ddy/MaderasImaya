@@ -62,7 +62,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
             {/* Slot 1: Top Full-Span Video (Torno Rotatorio Industrial) */}
             <div
               onClick={() => openLightbox(0)}
-              className="sm:col-span-2 h-52 sm:h-60 rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+              className="sm:col-span-2 h-[290px] sm:h-[336px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -111,7 +111,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
             {/* Slot 2: Video Gandola GMC (Logística & Despacho) */}
             <div
               onClick={() => openLightbox(1)}
-              className="h-[170px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+              className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -158,7 +158,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
             {/* Slot 3: Video Apilado de Chapas (Especialidad Contrachapado) */}
             <div
               onClick={() => openLightbox(2)}
-              className="h-[170px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+              className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -206,7 +206,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
             <div
               onClick={() => openLightbox(3)}
               style={{ position: "relative" }}
-              className="h-[170px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+              className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -252,7 +252,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
             <div
               onClick={() => openLightbox(4)}
               style={{ position: "relative" }}
-              className="h-[170px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+              className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
