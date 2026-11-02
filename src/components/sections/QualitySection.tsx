@@ -40,7 +40,7 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 [ Calidad y Firmeza ]
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-normal tracking-tight leading-[1.15] text-forest-dark mb-6">
-                Una Buena Elección
+                Una Buena Elección{" "}
                 <br />
                 Lo Cambia Todo
               </h2>
@@ -169,12 +169,12 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                   </span>
                 </div>
                 <div className="max-w-xl pb-0.5">
-                  <h4
+                  <h3
                     className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
                     style={textTitleStyle}
                   >
                     IMPORTACIÓN Y DISTRIBUCIÓN
-                  </h4>
+                  </h3>
                   <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
                     Despacho seguro en paletas flejadas y gandolas
                   </p>
@@ -216,12 +216,12 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                   </span>
                 </div>
                 <div className="max-w-xl pb-0.5">
-                  <h4
+                  <h3
                     className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
                     style={textTitleStyle}
                   >
                     CONTRACHAPADO DE PINO CARIBE
-                  </h4>
+                  </h3>
                   <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
                     Chapas cruzadas a 90° prensadas a alta temperatura
                   </p>
@@ -262,12 +262,12 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                   </span>
                 </div>
                 <div className="max-w-xl pb-0.5">
-                  <h4
+                  <h3
                     className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
                     style={textTitleStyle}
                   >
                     CALIBRACIÓN Y CORTE PRECISO
-                  </h4>
+                  </h3>
                   <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
                     Espesores desde 6 mm hasta 18 mm sin alabeo
                   </p>
@@ -308,12 +308,12 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                   </span>
                 </div>
                 <div className="max-w-xl pb-0.5">
-                  <h4
+                  <h3
                     className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
                     style={textTitleStyle}
                   >
                     ROLAS DE PINO CARIBE 100%
-                  </h4>
+                  </h3>
                   <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
                     Selección directa en patio San Felipe, Yaracuy
                   </p>

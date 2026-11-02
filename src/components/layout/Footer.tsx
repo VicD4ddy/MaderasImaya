@@ -51,9 +51,9 @@ export function Footer({ onOpenQuoteModal }: FooterProps) {
               </svg>
             </a>
             <div>
-              <h3 className="text-xl sm:text-2xl font-normal tracking-tight text-forest-dark max-w-xs leading-snug mb-2">
+              <p className="text-xl sm:text-2xl font-normal tracking-tight text-forest-dark max-w-xs leading-snug mb-2">
                 Calidad y firmeza en madera contrachapada
-              </h3>
+              </p>
               <p className="text-xs text-gray-500">{companyInfo.address}</p>
             </div>
           </div>
@@ -61,9 +61,9 @@ export function Footer({ onOpenQuoteModal }: FooterProps) {
           {/* Right Links Columns */}
           <div className="lg:col-span-6 grid grid-cols-2 sm:grid-cols-4 gap-8 text-xs">
             <div>
-              <h4 className="font-mono text-[10px] uppercase text-gray-400 mb-3 tracking-wider font-semibold">
+              <p className="font-mono text-[10px] uppercase text-gray-400 mb-3 tracking-wider font-semibold">
                 PRODUCTOS
-              </h4>
+              </p>
               <ul className="space-y-2.5 text-gray-700">
                 <li>
                   <a href="#calidad" className="hover:text-imaya-green transition">
@@ -89,9 +89,9 @@ export function Footer({ onOpenQuoteModal }: FooterProps) {
             </div>
 
             <div>
-              <h4 className="font-mono text-[10px] uppercase text-gray-400 mb-3 tracking-wider font-semibold">
+              <p className="font-mono text-[10px] uppercase text-gray-400 mb-3 tracking-wider font-semibold">
                 OPERACIONES
-              </h4>
+              </p>
               <ul className="space-y-2.5 text-gray-700">
                 <li>
                   <a href="#nosotros" className="hover:text-imaya-green transition">
@@ -112,9 +112,9 @@ export function Footer({ onOpenQuoteModal }: FooterProps) {
             </div>
 
             <div>
-              <h4 className="font-mono text-[10px] uppercase text-gray-400 mb-3 tracking-wider font-semibold">
+              <p className="font-mono text-[10px] uppercase text-gray-400 mb-3 tracking-wider font-semibold">
                 NOSOTROS
-              </h4>
+              </p>
               <ul className="space-y-2.5 text-gray-700">
                 <li>
                   <a href="#nosotros" className="hover:text-imaya-green transition">
@@ -143,9 +143,9 @@ export function Footer({ onOpenQuoteModal }: FooterProps) {
             </div>
 
             <div>
-              <h4 className="font-mono text-[10px] uppercase text-gray-400 mb-3 tracking-wider font-semibold">
+              <p className="font-mono text-[10px] uppercase text-gray-400 mb-3 tracking-wider font-semibold">
                 CONECTA
-              </h4>
+              </p>
               <ul className="space-y-2.5 text-gray-700">
                 <li>
                   <a

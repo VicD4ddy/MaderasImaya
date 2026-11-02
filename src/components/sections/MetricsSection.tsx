@@ -66,7 +66,7 @@ export function MetricsSection({ onOpenQuoteModal }: MetricsSectionProps) {
                 [ Métricas de Respaldo ]
               </span>
               <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-forest-dark leading-tight">
-                Resultados Medibles.
+                Resultados Medibles.{" "}
                 <br />
                 Firmeza Garantizada
               </h2>

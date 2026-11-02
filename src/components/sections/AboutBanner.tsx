@@ -30,7 +30,7 @@ export function AboutBanner({ onOpenQuoteModal }: AboutBannerProps) {
 
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="text-3xl sm:text-5xl font-normal tracking-tight text-white leading-[1.12] mb-5">
-              Construido para un Futuro
+              Construido para un Futuro{" "}
               <br />
               más Firme y Sólido
             </h2>

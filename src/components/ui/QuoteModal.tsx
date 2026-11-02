@@ -48,7 +48,12 @@ export function QuoteModal({ isOpen, title, onClose }: QuoteModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-fadeIn">
-      <div className="bg-white rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="quote-modal-title"
+        className="bg-white rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative"
+      >
         <button
           onClick={handleClose}
           className="absolute top-5 right-5 text-gray-400 hover:text-gray-700 transition cursor-pointer"
@@ -61,7 +66,9 @@ export function QuoteModal({ isOpen, title, onClose }: QuoteModalProps) {
           [ Maderas IMAYA • Ventas Directas ]
         </span>
 
-        <h3 className="text-2xl font-normal text-forest-dark mb-2">{title || "Solicitar Cotización"}</h3>
+        <h2 id="quote-modal-title" className="text-2xl font-normal text-forest-dark mb-2">
+          {title || "Solicitar Cotización"}
+        </h2>
 
         <p className="text-xs text-gray-500 mb-6">
           Déjanos tus datos y el requerimiento de láminas contrachapadas. Se abrirá una conversación

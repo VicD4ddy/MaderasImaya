@@ -132,10 +132,10 @@ export function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
 
       {/* Secondary Hero Content (Bottom Section) */}
       <div className="relative z-10 px-6 sm:px-10 lg:px-14 pb-8 pt-4 text-center max-w-5xl mx-auto w-full">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-normal leading-snug tracking-tight mb-6 text-white max-w-3xl mx-auto">
+        <p className="text-xl sm:text-2xl lg:text-3xl font-normal leading-snug tracking-tight mb-6 text-white max-w-3xl mx-auto">
           Impulsamos la construcción y la carpintería con tableros contrachapados de máxima
           resistencia — prensados en caliente, estables y listos para grandes exigencias
-        </h2>
+        </p>
 
         <p className="font-mono text-[11px] sm:text-xs text-white/75 tracking-wider mb-5">
           [ aliado estratégico de +100 constructoras, ferreterías, madereras y carpinterías en
