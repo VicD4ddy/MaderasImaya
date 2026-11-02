@@ -35,7 +35,7 @@ export const BackgroundGlow = ({
         };
 
   return (
-    <div className={cn("w-full relative bg-[#D2EAD9] overflow-hidden", className)}>
+    <div className={cn("w-full relative bg-imaya-bg overflow-hidden", className)}>
       {/* Soft Glow Ambient Layer */}
       <div
         className="pointer-events-none absolute inset-0 z-0"

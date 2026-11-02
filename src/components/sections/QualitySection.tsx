@@ -79,7 +79,8 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 muted
                 playsInline
                 poster={assetPath("/images/quality/torno-rotatorio-poster.jpg")}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+                style={{ filter: "brightness(0.70) contrast(1.15) saturate(1.05)" }}
+                className="w-full h-full object-cover object-center brightness-[0.70] contrast-[1.15] saturate-[1.05] group-hover:scale-105 transition duration-700"
               >
                 <source src={assetPath("/videos/quality/torno-rotatorio.mp4")} type="video/mp4" />
               </video>

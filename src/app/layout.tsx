@@ -104,7 +104,7 @@ export default function RootLayout({
       lang="es"
       className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth antialiased`}
     >
-      <body className="font-sans min-h-screen bg-[#D2EAD9] text-forest-dark selection:bg-lime-pale selection:text-forest-dark">
+      <body className="font-sans min-h-screen bg-imaya-bg text-forest-dark selection:bg-lime-pale selection:text-forest-dark">
         <JsonLd />
         {children}
       </body>
