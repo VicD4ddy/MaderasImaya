@@ -59,7 +59,7 @@ export function CapabilitiesSection() {
               [ Galería de Producción • Planta Yaracuy ]
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-forest-dark leading-snug">
-              Asóciate con IMAYA para superar los retos más exigentes en construcción y carpintería
+              Proceso Productivo y Control de Calidad
             </h2>
           </div>
 

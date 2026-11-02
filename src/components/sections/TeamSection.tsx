@@ -30,11 +30,8 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
 
             {/* Narrative Paragraph */}
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-8">
-              En IMAYA, la ingeniería y la maquinaria pesada cobran verdadero sentido gracias a
-              las manos de nuestros trabajadores. Cada tablero de Pino Caribe es el resultado del
-              compromiso técnico, la experiencia y la dedicación de hombres y mujeres yaracuyanos
-              que transforman con orgullo los recursos de nuestra tierra en madera de máxima firmeza
-              para los proyectos de construcción más exigentes de Venezuela.
+              La precisión de nuestra maquinaria se respalda en personal calificado en planta,
+              garantizando tableros homogéneos, escuadrados y con entrega inmediata.
             </p>
 
             {/* 3 Pillars of Human Excellence (Swiss Precision Industrial Badges) */}
@@ -70,8 +67,7 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
                       </span>
                     </div>
                     <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                      Operación calificada en tornos continuos, secadores y prensas térmicas de alta
-                      presión bajo estrictas normas de protección industrial y bienestar laboral.
+                      Operación en tornos, secadores continuos y prensas térmicas bajo estrictas normas de seguridad industrial.
                     </p>
                   </div>
                 </div>
@@ -108,9 +104,7 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
                       </span>
                     </div>
                     <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                      Años de criterio seleccionando grano, espesores y vetas de pino para entregar
-                      tableros perfectamente escuadrados, resistentes al empuje del concreto y listos
-                      para su uso en obra.
+                      Selección de veta y calibración milimétrica para máxima resistencia al empuje del concreto en encofrados.
                     </p>
                   </div>
                 </div>
@@ -147,8 +141,7 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
                       </span>
                     </div>
                     <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                      Familias yaracuyanas que impulsan la soberanía productiva del país desde San
-                      Felipe, forjando un modelo maderero transparente, seguro y de clase mundial.
+                      Producción continua y transparente con mano de obra especializada en el estado Yaracuy.
                     </p>
                   </div>
                 </div>
@@ -162,7 +155,7 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
                   onClick={() => onOpenQuoteModal("Contacto con Equipo y Ventas IMAYA")}
                   className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-forest-dark hover:text-imaya-green transition group cursor-pointer"
                 >
-                  <span>Conectar con el equipo comercial y operativo de planta</span>
+                  <span>Contactar al equipo de planta</span>
                   <ArrowRight className="w-4 h-4 text-imaya-green group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>

@@ -86,9 +86,9 @@ export function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
           </h1>
 
           <p className="text-base sm:text-lg text-white/90 max-w-xl font-light leading-relaxed mb-8 opacity-0 animate-[wordReveal_0.9s_0.75s_forwards]">
-            Una buena elección lo cambia todo. Especialistas en{" "}
-            <strong className="text-white font-semibold">madera contrachapada de Pino Caribe</strong>,
-            importación y distribución nacional, tu aliado estratégico en construcción y carpintería.
+            Fabricación, importación y distribución nacional de{" "}
+            <strong className="text-white font-semibold">madera contrachapada de Pino Caribe</strong>{" "}
+            de alta resistencia.
           </p>
 
           {/* Primary Action Button */}
@@ -132,8 +132,7 @@ export function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
       {/* Secondary Hero Content (Bottom Section) */}
       <div className="relative z-10 px-6 sm:px-10 lg:px-14 pb-8 pt-4 text-center max-w-5xl mx-auto w-full">
         <p className="text-xl sm:text-2xl lg:text-3xl font-normal leading-snug tracking-tight mb-6 text-white max-w-3xl mx-auto">
-          Impulsamos la construcción y la carpintería con tableros contrachapados de máxima
-          resistencia, prensados en caliente, estables y listos para grandes exigencias
+          Tableros contrachapados de alto rendimiento, prensados en caliente y listos para obra pesada
         </p>
 
         <p className="font-mono text-[11px] sm:text-xs text-white/75 tracking-wider mb-5">

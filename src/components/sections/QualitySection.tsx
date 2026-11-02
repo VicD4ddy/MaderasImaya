@@ -40,14 +40,13 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 [ Calidad y Firmeza ]
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-normal tracking-tight leading-[1.15] text-forest-dark mb-6">
-                Una Buena Elección{" "}
+                Madera Calibrada para{" "}
                 <br />
-                Lo Cambia Todo
+                Exigencias Reales
               </h2>
               <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                Desde nuestra planta en la Carretera Panamericana, San Felipe, Yaracuy,
-                seleccionamos rolas de Pino Caribe de primera y procesamos láminas contrachapadas
-                diseñadas para resistir el trabajo pesado en obra y lucir impecables en carpintería.
+                Selección directa de rolas y prensado térmico de precisión para entregar tableros sin
+                alabeo, estables y de acabado superior.
               </p>
               <button
                 onClick={() => onOpenQuoteModal?.("Solicitar Catálogo de Productos")}

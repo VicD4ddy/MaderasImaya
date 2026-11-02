@@ -36,18 +36,15 @@ export function AboutBanner({ onOpenQuoteModal }: AboutBannerProps) {
             </h2>
 
             <p className="text-xs sm:text-sm text-white/80 leading-relaxed mb-8 max-w-xl mx-auto">
-              En <strong className="text-white font-semibold">{companyInfo.legalName}</strong>{" "}
-              somos tu aliado estratégico en madera contrachapada de Pino Caribe. Ya sea que dirijas
-              una obra civil, una carpintería industrial o una distribuidora ferretera, estamos listos
-              para despachar tu pedido.
+              Suministro directo desde planta para constructoras, industrias y redes de distribución en todo el país.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
               <button
-                onClick={() => onOpenQuoteModal("Construyamos tu próximo proyecto juntos")}
+                onClick={() => onOpenQuoteModal("Solicitar Cotización de Planta")}
                 className="bg-lime-pale hover:bg-lime-hover text-forest-dark text-xs sm:text-sm font-semibold px-6 py-3.5 rounded-md transition shadow-lg cursor-pointer hover:shadow-lime-pale/25 hover:-translate-y-0.5"
               >
-                Construyamos tu próximo proyecto juntos
+                Solicitar Cotización de Planta
               </button>
               <a
                 href={companyInfo.instagram}
