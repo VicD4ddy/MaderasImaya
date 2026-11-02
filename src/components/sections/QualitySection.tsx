@@ -76,12 +76,13 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 muted
                 playsInline
                 poster={assetPath("/images/quality/prensa-hidraulica-poster.jpg")}
-                style={{ filter: "brightness(0.75) contrast(1.15) saturate(1.05)" }}
-                className="w-full h-full object-cover object-center brightness-[0.75] contrast-[1.15] saturate-[1.05] group-hover:scale-105 transition duration-700"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
               >
                 <source src={assetPath("/videos/quality/prensa-hidraulica.mp4")} type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 z-10">
+              {/* Subtle bottom scrim protecting text legibility without darkening the rest of the video */}
+              <div className="absolute inset-x-0 bottom-0 h-28 sm:h-32 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none z-10" />
+              <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-5 z-20">
                 <div className="flex items-center justify-between">
                   <span className="text-white text-xs font-mono uppercase tracking-wider bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2 shadow-sm group-hover:bg-black/60 transition-colors">
                     <Flame className="w-3.5 h-3.5 text-lime-pale" />
@@ -128,12 +129,13 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 muted
                 playsInline
                 poster={assetPath("/images/quality/torno-rotatorio-poster.jpg")}
-                style={{ filter: "brightness(0.70) contrast(1.15) saturate(1.05)" }}
-                className="w-full h-full object-cover object-center brightness-[0.70] contrast-[1.15] saturate-[1.05] group-hover:scale-105 transition duration-700"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
               >
                 <source src={assetPath("/videos/quality/torno-rotatorio.mp4")} type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-4 sm:p-5 z-10">
+              {/* Subtle bottom scrim protecting text legibility without darkening the rest of the video */}
+              <div className="absolute inset-x-0 bottom-0 h-28 sm:h-32 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none z-10" />
+              <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-5 z-20">
                 <div className="flex items-center justify-between">
                   <span className="text-white text-xs font-mono uppercase tracking-wider bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2 shadow-sm group-hover:bg-black/60 transition-colors">
                     <span className="w-2 h-2 rounded-full bg-lime-pale animate-pulse" />
@@ -181,7 +183,9 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
               >
                 <source src={assetPath("/videos/quality/gandola-transporte.mp4")} type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
+              {/* Subtle bottom scrim protecting text legibility without darkening the rest of the video */}
+              <div className="absolute inset-x-0 bottom-0 h-20 sm:h-24 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none z-10" />
+              <div className="absolute inset-0 flex flex-col justify-between p-3.5 z-20">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
                     <Truck className="w-3.5 h-3.5 text-lime-pale" /> Logística
@@ -228,7 +232,9 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
               >
                 <source src={assetPath("/videos/quality/apilado-chapas.mp4")} type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
+              {/* Subtle bottom scrim protecting text legibility without darkening the rest of the video */}
+              <div className="absolute inset-x-0 bottom-0 h-20 sm:h-24 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none z-10" />
+              <div className="absolute inset-0 flex flex-col justify-between p-3.5 z-20">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
                     <Layers className="w-3.5 h-3.5 text-lime-pale" /> Especialidad
@@ -271,12 +277,13 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 muted
                 playsInline
                 poster={assetPath("/images/quality/guillotina-dimensionado-poster.jpg")}
-                style={{ filter: "brightness(0.75) contrast(1.15) saturate(1.05)" }}
-                className="w-full h-full object-cover object-center brightness-[0.75] contrast-[1.15] saturate-[1.05] group-hover:scale-105 transition duration-700"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
               >
                 <source src={assetPath("/videos/quality/guillotina-dimensionado.mp4")} type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
+              {/* Subtle bottom scrim protecting text legibility without darkening the rest of the video */}
+              <div className="absolute inset-x-0 bottom-0 h-20 sm:h-24 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none z-10" />
+              <div className="absolute inset-0 flex flex-col justify-between p-3.5 z-20">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
                     <Scissors className="w-3.5 h-3.5 text-lime-pale" /> Guillotina
@@ -319,12 +326,13 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
                 muted
                 playsInline
                 poster={assetPath("/images/quality/montacargas-despacho-poster.jpg")}
-                style={{ filter: "brightness(0.75) contrast(1.15) saturate(1.05)" }}
-                className="w-full h-full object-cover object-center brightness-[0.75] contrast-[1.15] saturate-[1.05] group-hover:scale-105 transition duration-700"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
               >
                 <source src={assetPath("/videos/quality/montacargas-despacho.mp4")} type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/55 transition-all duration-500 flex flex-col justify-between p-3.5 z-10">
+              {/* Subtle bottom scrim protecting text legibility without darkening the rest of the video */}
+              <div className="absolute inset-x-0 bottom-0 h-20 sm:h-24 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none z-10" />
+              <div className="absolute inset-0 flex flex-col justify-between p-3.5 z-20">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
                     <Boxes className="w-3.5 h-3.5 text-lime-pale" /> Paletizado
