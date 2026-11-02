@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
-const basePath = isProd ? "/MaderasImaya" : "";
+const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (isGitHubActions ? "/MaderasImaya" : "");
 
 const nextConfig: NextConfig = {
   output: "export",
