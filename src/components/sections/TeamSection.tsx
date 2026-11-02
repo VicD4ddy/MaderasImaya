@@ -175,7 +175,7 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
               style={{ position: "relative" }}
               className="relative w-full max-w-[340px] sm:max-w-[370px] aspect-[9/16] rounded-2xl overflow-hidden shadow-[0_12px_40px_rgba(20,32,25,0.12)] border border-black/5 bg-forest-dark group select-none cursor-pointer"
             >
-              {/* Native Continuous Silent Loop (Living GIF behavior) */}
+              {/* Native Continuous Silent Loop (Living GIF behavior) with Cine Industrial grading */}
               <video
                 autoPlay
                 loop
@@ -183,7 +183,8 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
                 playsInline
                 disablePictureInPicture
                 poster={assetPath("/images/team/trabajadores-imaya-poster.jpg")}
-                className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out pointer-events-none"
+                style={{ filter: "brightness(0.82) contrast(1.10) saturate(1.05)" }}
+                className="w-full h-full object-cover object-center brightness-[0.82] contrast-[1.10] saturate-[1.05] group-hover:scale-[1.03] transition-all duration-700 ease-out pointer-events-none"
               >
                 <source src={assetPath("/videos/team/trabajadores-imaya.mp4")} type="video/mp4" />
               </video>
