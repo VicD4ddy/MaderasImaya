@@ -183,8 +183,8 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
                 playsInline
                 disablePictureInPicture
                 poster={assetPath("/images/team/trabajadores-imaya-poster.jpg")}
-                style={{ filter: "brightness(0.70) contrast(1.14) saturate(1.02)" }}
-                className="w-full h-full object-cover object-center brightness-[0.70] contrast-[1.14] saturate-[1.02] group-hover:scale-[1.03] transition-all duration-700 ease-out pointer-events-none"
+                style={{ filter: "brightness(0.58) contrast(1.20) saturate(1.05)" }}
+                className="w-full h-full object-cover object-center brightness-[0.58] contrast-[1.20] saturate-[1.05] group-hover:scale-[1.03] transition-all duration-700 ease-out pointer-events-none"
               >
                 <source src={assetPath("/videos/team/trabajadores-imaya.mp4")} type="video/mp4" />
               </video>
