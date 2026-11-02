@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Maderas IMAYA — Calidad y Firmeza en Madera Contrachapada de Pino Caribe",
+  title: "Maderas IMAYA | Calidad y Firmeza en Madera Contrachapada de Pino Caribe",
   description:
     "Especialistas en madera contrachapada de Pino Caribe, importación y distribución nacional desde San Felipe, Yaracuy. Tu aliado estratégico en construcción y carpintería.",
   keywords: [

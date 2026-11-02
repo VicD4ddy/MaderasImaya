@@ -44,10 +44,10 @@ export function AboutBanner({ onOpenQuoteModal }: AboutBannerProps) {
 
             <div className="flex flex-wrap items-center justify-center gap-4">
               <button
-                onClick={() => onOpenQuoteModal("Construyamos tu próximo proyecto — juntos")}
+                onClick={() => onOpenQuoteModal("Construyamos tu próximo proyecto juntos")}
                 className="bg-lime-pale hover:bg-lime-hover text-forest-dark text-xs sm:text-sm font-semibold px-6 py-3.5 rounded-md transition shadow-lg cursor-pointer hover:shadow-lime-pale/25 hover:-translate-y-0.5"
               >
-                Construyamos tu próximo proyecto — juntos
+                Construyamos tu próximo proyecto juntos
               </button>
               <a
                 href={companyInfo.instagram}

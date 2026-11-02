@@ -244,7 +244,7 @@ export function QualityLightbox({
                 {currentItem.title}
               </h3>
               <span className="text-xs text-lime-pale font-mono hidden sm:inline-block">
-                — {currentItem.subtitle}
+                • {currentItem.subtitle}
               </span>
             </div>
             <p className="text-xs text-white/80 max-w-2xl leading-relaxed">

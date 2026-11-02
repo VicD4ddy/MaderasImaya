@@ -74,14 +74,13 @@ export function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
             <span className="hero-word" style={{ animationDelay: "0.12s" }}>Bosque</span>{" "}
             <span className="hero-word" style={{ animationDelay: "0.19s" }}>a</span>{" "}
             <span className="hero-word" style={{ animationDelay: "0.26s" }}>tu</span>{" "}
-            <span className="hero-word" style={{ animationDelay: "0.33s" }}>Obra</span>{" "}
-            <span className="hero-word" style={{ animationDelay: "0.40s" }}>—</span>
+            <span className="hero-word" style={{ animationDelay: "0.33s" }}>Obra</span>
             <br className="hidden sm:block" />
-            <span className="hero-word" style={{ animationDelay: "0.47s" }}>Firmeza,</span>{" "}
-            <span className="hero-word text-lime-pale" style={{ animationDelay: "0.56s" }}>
+            <span className="hero-word" style={{ animationDelay: "0.40s" }}>Firmeza,</span>{" "}
+            <span className="hero-word text-lime-pale" style={{ animationDelay: "0.49s" }}>
               Calidad,
             </span>{" "}
-            <span className="hero-word text-lime-pale" style={{ animationDelay: "0.65s" }}>
+            <span className="hero-word text-lime-pale" style={{ animationDelay: "0.58s" }}>
               Respaldo
             </span>
           </h1>
@@ -89,7 +88,7 @@ export function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
           <p className="text-base sm:text-lg text-white/90 max-w-xl font-light leading-relaxed mb-8 opacity-0 animate-[wordReveal_0.9s_0.75s_forwards]">
             Una buena elección lo cambia todo. Especialistas en{" "}
             <strong className="text-white font-semibold">madera contrachapada de Pino Caribe</strong>,
-            importación y distribución nacional — tu aliado estratégico en construcción y carpintería.
+            importación y distribución nacional, tu aliado estratégico en construcción y carpintería.
           </p>
 
           {/* Primary Action Button */}
@@ -134,7 +133,7 @@ export function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
       <div className="relative z-10 px-6 sm:px-10 lg:px-14 pb-8 pt-4 text-center max-w-5xl mx-auto w-full">
         <p className="text-xl sm:text-2xl lg:text-3xl font-normal leading-snug tracking-tight mb-6 text-white max-w-3xl mx-auto">
           Impulsamos la construcción y la carpintería con tableros contrachapados de máxima
-          resistencia — prensados en caliente, estables y listos para grandes exigencias
+          resistencia, prensados en caliente, estables y listos para grandes exigencias
         </p>
 
         <p className="font-mono text-[11px] sm:text-xs text-white/75 tracking-wider mb-5">

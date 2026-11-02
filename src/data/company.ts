@@ -1,5 +1,5 @@
 export const companyInfo = {
-  name: "IMAYA — Industria Maderera Yaracuy C.A.",
+  name: "IMAYA | Industria Maderera Yaracuy C.A.",
   shortName: "Maderas IMAYA",
   legalName: "INDUSTRIA MADERERA YARACUY C.A. (IMAYACA)",
   address: "Carretera Panamericana, San Felipe, Estado Yaracuy, Venezuela",
@@ -17,7 +17,7 @@ export function buildWhatsAppQuoteUrl(params: {
   notes?: string;
 }): string {
   const parts: string[] = [
-    `*Solicitud de Cotización — Maderas IMAYA*`,
+    `*Solicitud de Cotización: Maderas IMAYA*`,
     ``,
     `*Cliente / Empresa:* ${params.name || "Interesado"}`,
     `*Teléfono de contacto:* ${params.phone || "No indicado"}`,
