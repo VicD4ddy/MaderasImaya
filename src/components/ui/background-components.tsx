@@ -1,6 +1,5 @@
-import { cn, assetPath } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import React from "react";
-import Image from "next/image";
 
 interface BackgroundGlowProps {
   children?: React.ReactNode;
@@ -11,23 +10,37 @@ interface BackgroundGlowProps {
 export const BackgroundGlow = ({
   children,
   className,
+  variant = "combined",
 }: BackgroundGlowProps) => {
-  return (
-    <div className={cn("w-full relative bg-[#CDE5D4] overflow-hidden", className)}>
-      {/* Natural Caribbean Pine Forest Background (Mobile scroll, high organic depth) */}
-      <div className="pointer-events-none absolute inset-0 z-0">
-        <Image
-          src={assetPath("/images/background/bosque-pino-caribe-fondo.jpg")}
-          alt="Bosque de Pino Caribe en Venezuela"
-          fill
-          sizes="100vw"
-          className="object-cover object-top opacity-50 mix-blend-multiply"
-          priority
-        />
-        {/* Soft atmospheric wash ensuring optimal WCAG contrast for all headings and cards */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#D2EAD9]/60 via-[#D2EAD9]/70 to-[#D2EAD9]/80" />
-      </div>
+  const backgroundStyle =
+    variant === "yellow"
+      ? {
+          backgroundImage: `radial-gradient(circle at center, #FFF991 0%, transparent 70%)`,
+          opacity: 0.6,
+          mixBlendMode: "multiply" as const,
+        }
+      : variant === "green"
+      ? {
+          backgroundImage: `radial-gradient(circle at center, #7DEAA1 0%, transparent 70%)`,
+          opacity: 0.7,
+          mixBlendMode: "multiply" as const,
+        }
+      : {
+          backgroundImage: `
+            radial-gradient(circle at 50% 12%, rgba(20, 136, 68, 0.22) 0%, transparent 65%),
+            radial-gradient(circle at 15% 45%, rgba(228, 248, 178, 0.35) 0%, transparent 60%),
+            radial-gradient(circle at 85% 75%, rgba(20, 136, 68, 0.20) 0%, transparent 65%)
+          `,
+          opacity: 0.85,
+        };
 
+  return (
+    <div className={cn("w-full relative bg-[#D2EAD9] overflow-hidden", className)}>
+      {/* Soft Glow Ambient Layer */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0"
+        style={backgroundStyle}
+      />
       {/* Content */}
       <div className="relative z-10">{children}</div>
     </div>
