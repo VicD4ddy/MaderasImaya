@@ -38,8 +38,8 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
             <div className="space-y-3.5 mb-8">
               {/* Pillar 1 */}
               <div
-                style={{ borderColor: "rgba(0, 0, 0, 0.06)" }}
-                className="group relative p-4 sm:p-5 rounded-xl bg-white/95 backdrop-blur-md border border-black/5 shadow-[0_4px_20px_rgba(20,32,25,0.04)] hover:shadow-[0_8px_30px_rgba(19,136,68,0.08)] hover:-translate-y-0.5 hover:border-imaya-green/30 transition-all duration-300"
+                style={{ borderColor: "rgba(20, 32, 25, 0.12)" }}
+                className="group relative p-4 sm:p-5 rounded-xl bg-[#D2EAD9]/60 backdrop-blur-md border border-forest-dark/10 shadow-[0_4px_20px_rgba(20,32,25,0.03)] hover:bg-[#D2EAD9]/85 hover:shadow-[0_8px_30px_rgba(19,136,68,0.08)] hover:-translate-y-0.5 hover:border-imaya-green/40 transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   <div
@@ -66,7 +66,7 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
                         01
                       </span>
                     </div>
-                    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-forest-dark/75 leading-relaxed">
                       Operación en tornos, secadores continuos y prensas térmicas bajo estrictas normas de seguridad industrial.
                     </p>
                   </div>
@@ -75,8 +75,8 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
 
               {/* Pillar 2 */}
               <div
-                style={{ borderColor: "rgba(0, 0, 0, 0.06)" }}
-                className="group relative p-4 sm:p-5 rounded-xl bg-white/95 backdrop-blur-md border border-black/5 shadow-[0_4px_20px_rgba(20,32,25,0.04)] hover:shadow-[0_8px_30px_rgba(19,136,68,0.08)] hover:-translate-y-0.5 hover:border-imaya-green/30 transition-all duration-300"
+                style={{ borderColor: "rgba(20, 32, 25, 0.12)" }}
+                className="group relative p-4 sm:p-5 rounded-xl bg-[#D2EAD9]/60 backdrop-blur-md border border-forest-dark/10 shadow-[0_4px_20px_rgba(20,32,25,0.03)] hover:bg-[#D2EAD9]/85 hover:shadow-[0_8px_30px_rgba(19,136,68,0.08)] hover:-translate-y-0.5 hover:border-imaya-green/40 transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   <div
@@ -103,7 +103,7 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
                         02
                       </span>
                     </div>
-                    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-forest-dark/75 leading-relaxed">
                       Selección de veta y calibración milimétrica para máxima resistencia al empuje del concreto en encofrados.
                     </p>
                   </div>
@@ -112,8 +112,8 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
 
               {/* Pillar 3 */}
               <div
-                style={{ borderColor: "rgba(0, 0, 0, 0.06)" }}
-                className="group relative p-4 sm:p-5 rounded-xl bg-white/95 backdrop-blur-md border border-black/5 shadow-[0_4px_20px_rgba(20,32,25,0.04)] hover:shadow-[0_8px_30px_rgba(19,136,68,0.08)] hover:-translate-y-0.5 hover:border-imaya-green/30 transition-all duration-300"
+                style={{ borderColor: "rgba(20, 32, 25, 0.12)" }}
+                className="group relative p-4 sm:p-5 rounded-xl bg-[#D2EAD9]/60 backdrop-blur-md border border-forest-dark/10 shadow-[0_4px_20px_rgba(20,32,25,0.03)] hover:bg-[#D2EAD9]/85 hover:shadow-[0_8px_30px_rgba(19,136,68,0.08)] hover:-translate-y-0.5 hover:border-imaya-green/40 transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   <div
@@ -140,7 +140,7 @@ export function TeamSection({ onOpenQuoteModal }: TeamSectionProps) {
                         03
                       </span>
                     </div>
-                    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-forest-dark/75 leading-relaxed">
                       Producción continua y transparente con mano de obra especializada en el estado Yaracuy.
                     </p>
                   </div>
