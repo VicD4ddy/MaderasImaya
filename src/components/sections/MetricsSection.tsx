@@ -62,15 +62,15 @@ export function MetricsSection({ onOpenQuoteModal }: MetricsSectionProps) {
           {/* Left Column */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
-              <span className="font-mono text-xs text-forest-dark/70 tracking-wider block mb-3 font-semibold">
+              <span className="font-mono text-xs text-[#6B3E26] tracking-wider block mb-3 font-semibold">
                 [ Métricas de Respaldo ]
               </span>
-              <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-forest-dark leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-[#26150B] leading-tight">
                 Resultados Medibles.{" "}
                 <br />
                 Firmeza Garantizada
               </h2>
-              <p className="text-xs sm:text-sm text-forest-dark/80 mt-4 max-w-sm leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#4A2C18] mt-4 max-w-sm leading-relaxed font-medium">
                 Cada paquete de madera contrachapada que sale de nuestra planta en San Felipe,
                 Yaracuy pasa por un control riguroso de espesor, prensado y escuadrado.
               </p>
@@ -78,7 +78,7 @@ export function MetricsSection({ onOpenQuoteModal }: MetricsSectionProps) {
             <div className="mt-8 lg:mt-0">
               <button
                 onClick={() => onOpenQuoteModal("Solicitar Lista de Espesores y Precios al Mayor")}
-                className="bg-forest-dark hover:bg-black text-white text-xs font-medium px-5 py-3 rounded transition shadow-sm cursor-pointer"
+                className="bg-[#26150B] hover:bg-[#3A2112] text-white text-xs font-medium px-5 py-3 rounded transition shadow-sm cursor-pointer"
               >
                 Solicitar Lista de Espesores
               </button>
@@ -89,12 +89,12 @@ export function MetricsSection({ onOpenQuoteModal }: MetricsSectionProps) {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-12">
             {metricsData.map((m) => (
               <div key={m.id}>
-                <div className="text-5xl sm:text-6xl font-normal tracking-tight text-forest-dark mb-2 font-mono tabular-nums">
+                <div className="text-5xl sm:text-6xl font-normal tracking-tight text-[#26150B] mb-2 font-mono tabular-nums">
                   {m.prefix}
                   <span>{counts[m.id]}</span>
-                  <span className="text-forest-dark/40">{m.suffix}</span>
+                  <span className="text-[#8B5A2B]">{m.suffix}</span>
                 </div>
-                <p className="text-xs text-forest-dark/80 max-w-[230px] leading-relaxed">
+                <p className="text-xs text-[#4A2C18] max-w-[230px] leading-relaxed font-medium">
                   {m.description}
                 </p>
               </div>

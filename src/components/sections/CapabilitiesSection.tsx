@@ -54,11 +54,11 @@ export function CapabilitiesSection() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header with Navigation Controls */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-6">
-          <div className="max-w-2xl">
-            <span className="font-mono text-xs text-imaya-green font-medium tracking-wider block mb-3 font-semibold">
+          <div className="max-w-2xl rounded-2xl p-6 sm:p-8 bg-forest-dark/85 backdrop-blur-md border border-white/15 shadow-[0_8px_24px_rgba(0,0,0,0.28)]">
+            <span className="font-mono text-xs text-lime-pale tracking-wider block mb-3 font-semibold">
               [ Galería de Producción • Planta Yaracuy ]
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-forest-dark leading-snug">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-white leading-snug">
               Proceso Productivo y Control de Calidad
             </h2>
           </div>
@@ -67,14 +67,14 @@ export function CapabilitiesSection() {
           <div className="flex items-center gap-2 shrink-0">
             <button
               onClick={() => scroll("left")}
-              className="p-2.5 rounded-full border border-gray-200 hover:bg-lime-pale text-forest-dark transition cursor-pointer shadow-sm"
+              className="p-2.5 rounded-full border border-white/25 bg-forest-dark/85 backdrop-blur-md hover:bg-lime-pale hover:text-forest-dark hover:border-lime-pale text-white transition cursor-pointer shadow-md"
               aria-label="Desplazar a la izquierda"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="p-2.5 rounded-full border border-gray-200 hover:bg-lime-pale text-forest-dark transition cursor-pointer shadow-sm"
+              className="p-2.5 rounded-full border border-white/25 bg-forest-dark/85 backdrop-blur-md hover:bg-lime-pale hover:text-forest-dark hover:border-lime-pale text-white transition cursor-pointer shadow-md"
               aria-label="Desplazar a la derecha"
             >
               <ChevronRight className="w-5 h-5" />
@@ -118,8 +118,10 @@ export function CapabilitiesSection() {
         </div>
 
         {/* Caption Hint */}
-        <div className="flex items-center text-xs text-gray-500 pt-2 font-mono">
-          <span>Desliza para explorar la galería de la planta</span>
+        <div className="flex items-center pt-2">
+          <span className="inline-flex items-center text-xs text-white/90 font-mono bg-forest-dark/85 backdrop-blur-md border border-white/15 px-4 py-2 rounded-xl shadow-md">
+            Desliza para explorar la galería de la planta
+          </span>
         </div>
       </div>
 

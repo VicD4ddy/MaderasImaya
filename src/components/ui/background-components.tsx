@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { assetPath, cn } from "@/lib/utils";
 import React from "react";
 
 interface BackgroundGlowProps {
@@ -10,36 +10,20 @@ interface BackgroundGlowProps {
 export const BackgroundGlow = ({
   children,
   className,
-  variant = "combined",
 }: BackgroundGlowProps) => {
-  const backgroundStyle =
-    variant === "yellow"
-      ? {
-          backgroundImage: `radial-gradient(circle at center, #FFF991 0%, transparent 70%)`,
-          opacity: 0.6,
-          mixBlendMode: "multiply" as const,
-        }
-      : variant === "green"
-      ? {
-          backgroundImage: `radial-gradient(circle at center, #7DEAA1 0%, transparent 70%)`,
-          opacity: 0.7,
-          mixBlendMode: "multiply" as const,
-        }
-      : {
-          backgroundImage: `
-            radial-gradient(circle at 50% 12%, rgba(20, 136, 68, 0.22) 0%, transparent 65%),
-            radial-gradient(circle at 15% 45%, rgba(228, 248, 178, 0.35) 0%, transparent 60%),
-            radial-gradient(circle at 85% 75%, rgba(20, 136, 68, 0.20) 0%, transparent 65%)
-          `,
-          opacity: 0.85,
-        };
-
   return (
-    <div className={cn("w-full relative bg-imaya-bg overflow-hidden", className)}>
-      {/* Soft Glow Ambient Layer */}
+    <div
+      className={cn("w-full relative bg-[#1E140C] overflow-hidden", className)}
+      style={{
+        backgroundImage: `url('${assetPath("/images/backgrounds/fondo-madera.jpg")}')`,
+        backgroundRepeat: "repeat-y",
+        backgroundPosition: "top center",
+        backgroundSize: "100% auto",
+      }}
+    >
+      {/* Subtle Dark Scrim (bg-black/35) to preserve 100% Natural Wood Color and High Text Contrast */}
       <div
-        className="pointer-events-none absolute inset-0 z-0"
-        style={backgroundStyle}
+        className="pointer-events-none absolute inset-0 z-0 bg-black/35"
       />
       {/* Content */}
       <div className="relative z-10">{children}</div>
