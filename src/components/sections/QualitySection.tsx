@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { assetPath } from "@/lib/utils";
-import { ArrowRight, Layers, Truck, Ruler, Trees, Expand, Flame, Scissors, Boxes } from "lucide-react";
+import { ArrowRight, Layers, Truck, Flame, Scissors, Boxes } from "lucide-react";
 import { QualityLightbox } from "./QualityLightbox";
 
 interface QualitySectionProps {
@@ -19,14 +18,6 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
 
   const closeLightbox = () => {
     setActiveLightboxIndex(null);
-  };
-
-  const textTitleStyle: React.CSSProperties = {
-    textShadow: "0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,1)",
-  };
-
-  const subtextShadowStyle: React.CSSProperties = {
-    textShadow: "0 1px 4px rgba(0,0,0,0.95)",
   };
 
   return (
@@ -57,301 +48,193 @@ export function QualitySection({ onOpenQuoteModal }: QualitySectionProps) {
             </div>
 
             {/* Left Slot: Video Prensa Térmica Hidráulica (Index 0 in Lightbox) */}
-            <div
-              onClick={() => openLightbox(0)}
-              className="h-[280px] sm:h-[320px] lg:h-[480px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  openLightbox(0);
-                }
-              }}
-              aria-label="Abrir video de Prensa Hidráulica en galería"
-            >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster={assetPath("/images/quality/prensa-hidraulica-poster.jpg")}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+            <div className="flex flex-col gap-2">
+              <span className="self-start text-white text-xs font-mono uppercase tracking-wider bg-forest-dark px-3 py-1.5 rounded-lg border border-forest-dark/15 flex items-center gap-2 shadow-sm">
+                <Flame className="w-3.5 h-3.5 text-lime-pale" />
+                Prensado Térmico Continuo
+              </span>
+              <div
+                onClick={() => openLightbox(0)}
+                className="h-[420px] sm:h-[320px] lg:h-[480px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    openLightbox(0);
+                  }
+                }}
+                aria-label="Abrir video de Prensa Hidráulica en galería"
               >
-                <source src={assetPath("/videos/quality/prensa-hidraulica.mp4")} type="video/mp4" />
-              </video>
-              {/* Subtle bottom scrim protecting text legibility without darkening the rest of the video */}
-              <div className="absolute inset-x-0 bottom-0 h-28 sm:h-32 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none z-10" />
-              <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-5 z-20">
-                <div className="flex items-center justify-between">
-                  <span className="text-white text-xs font-mono uppercase tracking-wider bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2 shadow-sm group-hover:bg-black/60 transition-colors">
-                    <Flame className="w-3.5 h-3.5 text-lime-pale" />
-                    Prensado Térmico Continuo
-                  </span>
-                  <span className="text-[11px] font-mono text-lime-pale bg-black/40 backdrop-blur-md px-2.5 py-1.5 rounded-lg border border-white/10 flex items-center gap-1.5 shadow-sm group-hover:bg-lime-pale group-hover:text-forest-dark group-hover:border-lime-pale transition-all">
-                    <Expand className="w-3.5 h-3.5" /> Ver en Galería ↗
-                  </span>
-                </div>
-                <div className="max-w-xl pb-1">
-                  <h3
-                    className="text-base sm:text-lg font-bold text-white uppercase tracking-wide leading-tight"
-                    style={textTitleStyle}
-                  >
-                    Prensa Hidráulica Multicapa
-                  </h3>
-                  <p className="text-xs text-white/90 mt-1" style={subtextShadowStyle}>
-                    Curado de resinas fenólicas a alta presión y temperatura uniforme
-                  </p>
-                </div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster={assetPath("/images/quality/prensa-hidraulica-poster.jpg")}
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+                >
+                  <source src={assetPath("/videos/quality/prensa-hidraulica.mp4")} type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Bento Grid (Protected Frosted-Glass Pills + Heavy Black Stroke) */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Right Column: Bento Grid (External Pills + Clean Full-Bleed Videos) */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Slot 1: Top Full-Span Video (Torno Rotatorio Industrial) */}
-            <div
-              onClick={() => openLightbox(1)}
-              className="sm:col-span-2 h-[290px] sm:h-[336px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  openLightbox(1);
-                }
-              }}
-              aria-label="Abrir video de Torno Rotatorio en galería"
-            >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster={assetPath("/images/quality/torno-rotatorio-poster.jpg")}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+            <div className="sm:col-span-2 flex flex-col gap-2">
+              <span className="self-start text-white text-xs font-mono uppercase tracking-wider bg-forest-dark px-3 py-1.5 rounded-lg border border-forest-dark/15 flex items-center gap-2 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-lime-pale animate-pulse" />
+                Lotes Calibrados • San Felipe, Yaracuy
+              </span>
+              <div
+                onClick={() => openLightbox(1)}
+                className="h-[435px] sm:h-[336px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    openLightbox(1);
+                  }
+                }}
+                aria-label="Abrir video de Torno Rotatorio en galería"
               >
-                <source src={assetPath("/videos/quality/torno-rotatorio.mp4")} type="video/mp4" />
-              </video>
-              {/* Subtle bottom scrim protecting text legibility without darkening the rest of the video */}
-              <div className="absolute inset-x-0 bottom-0 h-28 sm:h-32 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none z-10" />
-              <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-5 z-20">
-                <div className="flex items-center justify-between">
-                  <span className="text-white text-xs font-mono uppercase tracking-wider bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2 shadow-sm group-hover:bg-black/60 transition-colors">
-                    <span className="w-2 h-2 rounded-full bg-lime-pale animate-pulse" />
-                    Lotes Calibrados • San Felipe, Yaracuy
-                  </span>
-                  <span className="text-[11px] font-mono text-lime-pale bg-black/40 backdrop-blur-md px-2.5 py-1.5 rounded-lg border border-white/10 flex items-center gap-1.5 shadow-sm group-hover:bg-lime-pale group-hover:text-forest-dark group-hover:border-lime-pale transition-all">
-                    <Expand className="w-3.5 h-3.5" /> Ver en Galería ↗
-                  </span>
-                </div>
-                <div className="max-w-xl pb-1">
-                  <h3
-                    className="text-base sm:text-lg font-bold text-white uppercase tracking-wide leading-tight"
-                    style={textTitleStyle}
-                  >
-                    Desenrollado Continuo de Rolas
-                  </h3>
-                  <p className="text-xs text-white/90 mt-1" style={subtextShadowStyle}>
-                    Torno rotatorio industrial • Tolerancia micrométrica ±0.2mm
-                  </p>
-                </div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster={assetPath("/images/quality/torno-rotatorio-poster.jpg")}
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+                >
+                  <source src={assetPath("/videos/quality/torno-rotatorio.mp4")} type="video/mp4" />
+                </video>
               </div>
             </div>
 
             {/* Slot 2: Video Gandola GMC (Logística & Despacho) */}
-            <div
-              onClick={() => openLightbox(2)}
-              className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  openLightbox(2);
-                }
-              }}
-              aria-label="Abrir video de Logística y Despacho en galería"
-            >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster={assetPath("/images/quality/gandola-transporte-poster.jpg")}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+            <div className="flex flex-col gap-2">
+              <span className="self-start text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-forest-dark px-2.5 py-1 rounded-lg border border-forest-dark/15 shadow-sm">
+                <Truck className="w-3.5 h-3.5 text-lime-pale" /> Logística
+              </span>
+              <div
+                onClick={() => openLightbox(2)}
+                className="h-[357px] sm:h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    openLightbox(2);
+                  }
+                }}
+                aria-label="Abrir video de Logística y Despacho en galería"
               >
-                <source src={assetPath("/videos/quality/gandola-transporte.mp4")} type="video/mp4" />
-              </video>
-              {/* Subtle bottom scrim protecting text legibility without darkening the rest of the video */}
-              <div className="absolute inset-x-0 bottom-0 h-20 sm:h-24 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none z-10" />
-              <div className="absolute inset-0 flex flex-col justify-between p-3.5 z-20">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
-                    <Truck className="w-3.5 h-3.5 text-lime-pale" /> Logística
-                  </span>
-                  <span className="bg-black/40 backdrop-blur-md p-1.5 rounded-lg border border-white/10 shadow-sm group-hover:bg-lime-pale group-hover:border-lime-pale transition-all">
-                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition-colors" />
-                  </span>
-                </div>
-                <div className="max-w-xl pb-0.5">
-                  <h3
-                    className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
-                    style={textTitleStyle}
-                  >
-                    IMPORTACIÓN Y DISTRIBUCIÓN
-                  </h3>
-                  <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
-                    Despacho seguro en paletas flejadas y gandolas
-                  </p>
-                </div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster={assetPath("/images/quality/gandola-transporte-poster.jpg")}
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+                >
+                  <source src={assetPath("/videos/quality/gandola-transporte.mp4")} type="video/mp4" />
+                </video>
               </div>
             </div>
 
             {/* Slot 3: Video Apilado de Chapas (Especialidad Contrachapado) */}
-            <div
-              onClick={() => openLightbox(3)}
-              className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  openLightbox(3);
-                }
-              }}
-              aria-label="Abrir video de Especialidad en Contrachapado en galería"
-            >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster={assetPath("/images/quality/apilado-chapas-poster.jpg")}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+            <div className="flex flex-col gap-2">
+              <span className="self-start text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-forest-dark px-2.5 py-1 rounded-lg border border-forest-dark/15 shadow-sm">
+                <Layers className="w-3.5 h-3.5 text-lime-pale" /> Especialidad
+              </span>
+              <div
+                onClick={() => openLightbox(3)}
+                className="h-[357px] sm:h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    openLightbox(3);
+                  }
+                }}
+                aria-label="Abrir video de Especialidad en Contrachapado en galería"
               >
-                <source src={assetPath("/videos/quality/apilado-chapas.mp4")} type="video/mp4" />
-              </video>
-              {/* Subtle bottom scrim protecting text legibility without darkening the rest of the video */}
-              <div className="absolute inset-x-0 bottom-0 h-20 sm:h-24 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none z-10" />
-              <div className="absolute inset-0 flex flex-col justify-between p-3.5 z-20">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
-                    <Layers className="w-3.5 h-3.5 text-lime-pale" /> Especialidad
-                  </span>
-                  <span className="bg-black/40 backdrop-blur-md p-1.5 rounded-lg border border-white/10 shadow-sm group-hover:bg-lime-pale group-hover:border-lime-pale transition-all">
-                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition-colors" />
-                  </span>
-                </div>
-                <div className="max-w-xl pb-0.5">
-                  <h3
-                    className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
-                    style={textTitleStyle}
-                  >
-                    CONTRACHAPADO DE PINO CARIBE
-                  </h3>
-                  <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
-                    Chapas cruzadas a 90° prensadas a alta temperatura
-                  </p>
-                </div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster={assetPath("/images/quality/apilado-chapas-poster.jpg")}
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+                >
+                  <source src={assetPath("/videos/quality/apilado-chapas.mp4")} type="video/mp4" />
+                </video>
               </div>
             </div>
 
             {/* Slot 4: Video Guillotina Industrial (Corte y Dimensionado) */}
-            <div
-              onClick={() => openLightbox(4)}
-              className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  openLightbox(4);
-                }
-              }}
-              aria-label="Abrir video de Guillotina Industrial en galería"
-            >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster={assetPath("/images/quality/guillotina-dimensionado-poster.jpg")}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+            <div className="flex flex-col gap-2">
+              <span className="self-start text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-forest-dark px-2.5 py-1 rounded-lg border border-forest-dark/15 shadow-sm">
+                <Scissors className="w-3.5 h-3.5 text-lime-pale" /> Guillotina
+              </span>
+              <div
+                onClick={() => openLightbox(4)}
+                className="h-[357px] sm:h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    openLightbox(4);
+                  }
+                }}
+                aria-label="Abrir video de Guillotina Industrial en galería"
               >
-                <source src={assetPath("/videos/quality/guillotina-dimensionado.mp4")} type="video/mp4" />
-              </video>
-              {/* Subtle bottom scrim protecting text legibility without darkening the rest of the video */}
-              <div className="absolute inset-x-0 bottom-0 h-20 sm:h-24 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none z-10" />
-              <div className="absolute inset-0 flex flex-col justify-between p-3.5 z-20">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
-                    <Scissors className="w-3.5 h-3.5 text-lime-pale" /> Guillotina
-                  </span>
-                  <span className="bg-black/40 backdrop-blur-md p-1.5 rounded-lg border border-white/10 shadow-sm group-hover:bg-lime-pale group-hover:border-lime-pale transition-all">
-                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition-colors" />
-                  </span>
-                </div>
-                <div className="max-w-xl pb-0.5">
-                  <h3
-                    className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
-                    style={textTitleStyle}
-                  >
-                    CORTE Y GUILLOTINADO
-                  </h3>
-                  <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
-                    Escuadrado milimétrico y clasificación de chapas
-                  </p>
-                </div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster={assetPath("/images/quality/guillotina-dimensionado-poster.jpg")}
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+                >
+                  <source src={assetPath("/videos/quality/guillotina-dimensionado.mp4")} type="video/mp4" />
+                </video>
               </div>
             </div>
 
             {/* Slot 5: Video Montacargas y Despacho de Tableros */}
-            <div
-              onClick={() => openLightbox(5)}
-              className="h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  openLightbox(5);
-                }
-              }}
-              aria-label="Abrir video de Montacargas y Paletizado en galería"
-            >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster={assetPath("/images/quality/montacargas-despacho-poster.jpg")}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+            <div className="flex flex-col gap-2">
+              <span className="self-start text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-forest-dark px-2.5 py-1 rounded-lg border border-forest-dark/15 shadow-sm">
+                <Boxes className="w-3.5 h-3.5 text-lime-pale" /> Paletizado
+              </span>
+              <div
+                onClick={() => openLightbox(5)}
+                className="h-[357px] sm:h-[238px] rounded-xl overflow-hidden relative group bg-forest-dark border border-forest-dark/10 shadow-sm cursor-pointer select-none"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    openLightbox(5);
+                  }
+                }}
+                aria-label="Abrir video de Montacargas y Paletizado en galería"
               >
-                <source src={assetPath("/videos/quality/montacargas-despacho.mp4")} type="video/mp4" />
-              </video>
-              {/* Subtle bottom scrim protecting text legibility without darkening the rest of the video */}
-              <div className="absolute inset-x-0 bottom-0 h-20 sm:h-24 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none z-10" />
-              <div className="absolute inset-0 flex flex-col justify-between p-3.5 z-20">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-lime-pale font-mono tracking-wider flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 shadow-sm group-hover:bg-black/60 transition-colors">
-                    <Boxes className="w-3.5 h-3.5 text-lime-pale" /> Paletizado
-                  </span>
-                  <span className="bg-black/40 backdrop-blur-md p-1.5 rounded-lg border border-white/10 shadow-sm group-hover:bg-lime-pale group-hover:border-lime-pale transition-all">
-                    <Expand className="w-3.5 h-3.5 text-white/90 group-hover:text-forest-dark transition-colors" />
-                  </span>
-                </div>
-                <div className="max-w-xl pb-0.5">
-                  <h3
-                    className="text-xs sm:text-[13px] font-bold uppercase tracking-wide text-white leading-tight"
-                    style={textTitleStyle}
-                  >
-                    MONTACARGAS Y DESPACHO
-                  </h3>
-                  <p className="text-[11px] text-white/90 mt-0.5 line-clamp-1" style={subtextShadowStyle}>
-                    Paletas flejadas y carga directa en planta
-                  </p>
-                </div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster={assetPath("/images/quality/montacargas-despacho-poster.jpg")}
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700"
+                >
+                  <source src={assetPath("/videos/quality/montacargas-despacho.mp4")} type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
